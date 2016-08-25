@@ -58,7 +58,7 @@ class UserMasterController extends Controller {
         if (isset($_POST['UserMaster'])) {
             $model->attributes = $_POST['UserMaster'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->user_master_id));
+                $this->redirect(array('admin', 'id' => $model->user_master_id));
         }
 
         $this->render('create', array(
@@ -80,7 +80,7 @@ class UserMasterController extends Controller {
         if (isset($_POST['UserMaster'])) {
             $model->attributes = $_POST['UserMaster'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->user_master_id));
+                $this->redirect(array('admin', 'id' => $model->user_master_id));
         }
 
         $this->render('update', array(

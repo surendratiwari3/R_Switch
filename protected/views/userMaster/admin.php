@@ -1,58 +1,91 @@
-<?php
-/* @var $this UserMasterController */
-/* @var $model UserMaster */
-
-$this->breadcrumbs=array(
-	'User Masters'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'List UserMaster', 'url'=>array('index')),
-	array('label'=>'Create UserMaster', 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#user-master-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-?>
-
-<h1>Manage User Masters</h1>
-
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'user-master-grid',
-	'dataProvider'=>$model->search(),
-	'columns'=>array(
-		'username',
-		'user_ip',
-		'account_type',
-		'user_type',
-		/*
-		'outbound_concurrent_call',
-		'user_cps',
-		'user_package_id',
-		'user_created_date',
-		'user_updated_date',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<ul class="breadcrumb">
+    <li>
+        <i class="icon-home"></i>
+        <a href="userMaster/admin">Dashboard</a> 
+        <i class="icon-angle-right"></i>
+    </li>
+    <li><a href="#">Users</a></li>
+</ul>
+<?php //$this->renderPartial("/layouts/_message"); ?>
+<div class="row-fluid sortable ui-sortable">		
+    <div class="box span12">
+        <div data-original-title="" class="box-header">
+            <h2><i class="halflings-icon user"></i><span class="break"></span>Users</h2>
+            <div class="box-icon">
+                <a class="btn-setting" href="#"><i class="halflings-icon wrench"></i></a>
+                <a class="btn-minimize" href="#"><i class="halflings-icon chevron-up"></i></a>
+                <a class="btn-close" href="#"><i class="halflings-icon remove"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            <div role="grid" class="dataTables_wrapper" id="DataTables_Table_0_wrapper">
+                <div class="row-fluid">
+                    <div class="span5">
+                        <div id="DataTables_Table_0_length" class="dataTables_length"><label>
+                                <select name="DataTables_Table_0_length" size="1" aria-controls="DataTables_Table_0"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records per page</label>
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <div class="dataTables_filter" id="DataTables_Table_0_filter">
+                            <label>Search: <input type="text" aria-controls="DataTables_Table_0"></label>
+                        </div>
+                    </div>
+                    <div class="spa24">
+                        <div id="DataTables_Table_0_length" class="dataTables_length"><label>
+                                <a class="btn btn-primary" href="index.php?r=userMaster/create">Create User</a>
+                        </div>
+                    </div
+                    <?php //$this->renderPartial("_search", array("model" => $model)); ?>
+                </div>
+                <?php
+                $updateRight = true;
+                $deleteRight = true;
+                $columnClass = (!$updateRight && !$deleteRight) ? "hide" : "";
+                $this->widget("zii.widgets.grid.CGridView", array(
+                    "id" => "users-grid",
+                    "dataProvider" => $model->search(),
+                    "columns" => array(
+                        'username',
+                        "user_ip",
+                        'account_type',
+                        'user_type',
+                        array(
+                            "class" => "CButtonColumn",
+                            "header" => "Action",
+                            "htmlOptions" => array("width" => "10%", "class" => "text-center $columnClass"),
+                            "headerHtmlOptions" => array("width" => "10%", "class" => "text-center $columnClass"),
+                            "template" => '{updateRecord}{deleteRecord}',
+                            "buttons" => array(
+                                "updateRecord" => array(
+                                    "label" => '<i class="halflings-icon white edit"></i> ',
+                                    "imageUrl" => false,
+                                    "url" => 'Yii::app()->createUrl("userMaster/update", array("id"=>$data->user_master_id))',
+                                    "options" => array("class" => "addUpdateRecord mr5 btn btn-success", "title" => "Update"),
+                                    "visible" => ($updateRight) ? 'true' : 'false',
+                                ),
+                                "deleteRecord" => array(
+                                    "label" => '<i class="halflings-icon white trash"></i> ',
+                                    "imageUrl" => false,
+                                    "url" => 'Yii::app()->createUrl("userMaster/delete", array("id"=>$data->user_master_id))',
+                                    "options" => array("class" => "deleteRecord btn btn-danger mr5", "title" => "Delete", "style" => "margin-left:10px;"),
+                                    "visible" => ($deleteRight) ? 'true' : 'false',
+                                ),
+                            ),
+                        ),
+                    ),
+                ));
+                Yii::app()->clientScript->registerScript('actions', "
+                    $('.deleteRecord').live('click',function() {
+                        if(!confirm('Are you sure to delete ?')) return false;                        
+                        var url = $(this).attr('href');
+                        $.post(url,function(res){
+                            $.fn.yiiGridView.update('users-grid');
+                            $('#flash-message').html(res).animate({opacity: 1.0}, 3000).fadeOut('slow');
+                        });
+                        return false;
+                    });
+                ");
+                ?>
+            </div>
+        </div>
+    </div>
