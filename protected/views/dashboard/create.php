@@ -1,7 +1,7 @@
 <ul class="breadcrumb">
     <li>
         <i class="icon-user"></i>
-        <a href="<?php echo Yii::app()->createUrl('userMaster/admin') ?>">Users</a> 
+        <a href="userMaster/admin">Users</a> 
         <i class="icon-angle-right"></i>
     </li>
     <li><a href="#">Create User</a></li>

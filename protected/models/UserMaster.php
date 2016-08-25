@@ -18,6 +18,8 @@
  */
 class UserMaster extends CActiveRecord {
 
+    public $pageSize = 10;
+
     /**
      * @return string the associated database table name
      */
@@ -42,6 +44,7 @@ class UserMaster extends CActiveRecord {
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('user_master_id, username, password, user_ip, account_type, user_type, outbound_concurrent_call, user_cps, user_package_id, user_created_date, user_updated_date', 'safe', 'on' => 'search'),
+            array("pageSize", "safe")
         );
     }
 
@@ -90,23 +93,15 @@ class UserMaster extends CActiveRecord {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria = new CDbCriteria;
-
-        $criteria->compare('user_master_id', $this->user_master_id);
-        $criteria->compare('username', $this->username, true);
-        $criteria->compare('password', $this->password, true);
-        $criteria->compare('user_ip', $this->user_ip, true);
-        $criteria->compare('account_type', $this->account_type, true);
-        $criteria->compare('user_type', $this->user_type, true);
-        $criteria->compare('outbound_concurrent_call', $this->outbound_concurrent_call);
-        $criteria->compare('user_cps', $this->user_cps);
-        $criteria->compare('user_package_id', $this->user_package_id);
-        $criteria->compare('user_created_date', $this->user_created_date, true);
-        $criteria->compare('user_updated_date', $this->user_updated_date, true);
-
+        $criteria->compare('username', $this->user_master_id, true, "OR");
+        $criteria->compare('user_ip', $this->user_master_id, true, "OR");
+        $criteria->compare('account_type', $this->user_master_id, true, "OR");
+        $criteria->compare('user_type', $this->user_master_id, true, "OR");
+        
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'pagination' => array(
-                'pageSize' => 20,
+                'pageSize' => $this->pageSize,
             ),
         ));
     }

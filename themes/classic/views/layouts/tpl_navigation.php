@@ -11,7 +11,7 @@
 <div class="nav-collapse sidebar-nav">
     <ul class="nav nav-tabs nav-stacked main-menu">
         <?php if (Yii::app()->user->user_type === 'admin') { ?>
-            <li><a href="#"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+            <li><a href="<?php echo Yii::app()->createUrl('dashboard') ?>"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>
             <li><a href="<?php echo Yii::app()->createUrl('userMaster/admin') ?>"><i class="icon-user"></i><span class="hidden-tablet"> Users</span></a></li>
                     <?php }
                     ?>

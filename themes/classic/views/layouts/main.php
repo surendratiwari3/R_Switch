@@ -22,7 +22,7 @@
         <!-- start: Mobile Specific -->
         <meta name="viewportF" content="width=device-width, initial-scale=1">
         <!-- end: Mobile Specific -->
-        <title><?php //echo CHtml::encode($this->title);  ?></title>
+        <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
         <!-- Yii variable declaration -->
         <?php
@@ -42,7 +42,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
         <!-- end: CSS -->
 
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<!--        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
         <?php
         /*
          * The HTML5 shim, for IE6-8 support of HTML5 elements
@@ -124,7 +124,7 @@
 
         <!-- start: JavaScript-->
         <?php
-        $cs->registerScriptFile($baseUrl . '/js/jquery-1.9.1.min.js');
+        //$cs->registerScriptFile($baseUrl . '/js/jquery-1.9.1.min.js');
         $cs->registerScriptFile($baseUrl . '/js/jquery-migrate-1.0.0.min.js');
         $cs->registerScriptFile($baseUrl . '/js/jquery-ui-1.10.0.custom.min.js');
         $cs->registerScriptFile($baseUrl . '/js/jquery.ui.touch-punch.js');

@@ -1,7 +1,7 @@
 <ul class="breadcrumb">
     <li>
         <i class="icon-home"></i>
-        <a href="index.php?r=dashboard">Dashboard</a> 
+        <a href="dashboard">Dashboard</a> 
         <i class="icon-angle-right"></i>
     </li>
     <li><a href="#">Users</a></li>
