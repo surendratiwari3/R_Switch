@@ -28,6 +28,7 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="control-group">
         <?php echo $form->labelEx($model, 'subcription_status', array("class" => "control-label")); ?>
         <div class="controls">
+            <?php unset($model->statusArr[DidSubscription::DELETED]); ?>
             <?php echo $form->dropDownList($model, 'subcription_status', $model->statusArr, array("prompt" => common::translateText("DROPDOWN_TEXT"))); ?>
             <?php echo $form->error($model, 'subcription_status'); ?>
         </div>
@@ -35,8 +36,22 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="control-group">
         <?php echo $form->labelEx($model, 'subscription_type', array("class" => "control-label")); ?>
         <div class="controls">
-            <?php echo $form->textField($model, 'subscription_type'); ?>
+            <?php echo $form->dropDownList($model, 'subscription_type', $model->subscriptionType, array("prompt" => common::translateText("DROPDOWN_TEXT"))); ?>
             <?php echo $form->error($model, 'subscription_type'); ?>
+        </div>
+    </div>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'did_user_ip', array("class" => "control-label")); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'did_user_ip'); ?>
+            <?php echo $form->error($model, 'did_user_ip'); ?>
+        </div>
+    </div>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'max_inbound_call', array("class" => "control-label")); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'max_inbound_call'); ?>
+            <?php echo $form->error($model, 'max_inbound_call'); ?>
         </div>
     </div>
     <div class="form-actions">

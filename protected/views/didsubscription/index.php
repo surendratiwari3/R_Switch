@@ -46,6 +46,7 @@
                             'value' => '!empty($data->statusArr[$data->subcription_status])?$data->statusArr[$data->subcription_status]:"N/A"'
                         ),
                         'max_inbound_call',
+                        'did_user_ip',
                         array(
                             "class" => "CButtonColumn",
                             "header" => "Action",

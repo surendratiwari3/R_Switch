@@ -21,7 +21,7 @@ class DidSubscription extends CActiveRecord {
     const DELETED = 2;
 
     public $statusArr = array(self::DEACTIVE => "Deactive", self::ACTIVE => "Active", self::DELETED => "Deleted");
-    public $availabilityArr = array(1 => "Weekly", 2 => "Monthly", 3 => "Yearly");
+    public $subscriptionType = array('FREE_DID' => 'FREE_DID', 'MONTHLY_DID' => 'MONTHLY_DID', 'TOLLFREE_DID' => 'TOLLFREE_DID', 'PER_MINUTE_DID' => 'PER_MINUTE_DID');
 
     /**
      * Returns the static model of the specified AR class.
@@ -46,7 +46,7 @@ class DidSubscription extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('user_id, did_id, subscription_type,subcription_status', 'required'),
+            array('user_id, did_id, subscription_type,subcription_status,did_user_ip,max_inbound_call', 'required'),
             array('user_id, did_id, max_inbound_call', 'numerical', 'integerOnly' => true),
             array('did_user_ip', 'length', 'max' => 100),
             array('subscription_type', 'length', 'max' => 14),
