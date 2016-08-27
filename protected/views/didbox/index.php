@@ -105,12 +105,13 @@
                             });  
                         });
                         $('.importRecord').live('click',function() {                        
-                            var url = $(this).attr('href');
-                            $.post(url,function(html){
-                                $('#modalContainer').html(html);
-                                $('#modalContainer .modal').modal();              
-                            });
+                            $('#modalContainer .modal').modal();                                          
                             return false;
+                        });
+                        $('.importRecord').hide();
+                        $.post('" . Yii::app()->createUrl("didbox/import") . "',function(html){
+                            $('#modalContainer').html(html);
+                            $('.importRecord').show();
                         });
                     ");
                 ?>
