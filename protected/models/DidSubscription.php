@@ -14,7 +14,7 @@
  */
 class DidSubscription extends CActiveRecord {
 
-    public $pageSize;
+    public $pageSize, $provider_id;
 
     const DEACTIVE = 0;
     const ACTIVE = 1;
@@ -52,6 +52,7 @@ class DidSubscription extends CActiveRecord {
             array('subscription_type', 'length', 'max' => 14),
             array('subcription_status', 'length', 'max' => 1),
             array('pageSize', 'safe'),
+            array('provider_id', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('did_subscription_id, user_id, did_id, did_user_ip, subscription_type, subcription_status, max_inbound_call', 'safe', 'on' => 'search'),
@@ -82,6 +83,7 @@ class DidSubscription extends CActiveRecord {
             'subscription_type' => 'Subscription Type',
             'subcription_status' => 'Status',
             'max_inbound_call' => 'Max Inbound Call',
+            'provider_id' => 'Provider'
         );
     }
 
@@ -95,14 +97,16 @@ class DidSubscription extends CActiveRecord {
 
         $criteria = new CDbCriteria;
 
-        $criteria->compare('did_subscription_id', $this->did_subscription_id);
-        $criteria->compare('user_id', $this->user_id);
-        $criteria->compare('did_id', $this->did_id);
-        $criteria->compare('did_user_ip', $this->did_user_ip, true);
-        $criteria->compare('subscription_type', $this->subscription_type, true);
-        $criteria->compare('subcription_status', $this->subcription_status, true);
-        $criteria->compare('max_inbound_call', $this->max_inbound_call);
+        $criteria->compare('t.did_subscription_id', $this->did_subscription_id);
+        $criteria->compare('t.user_id', $this->user_id);
+        $criteria->compare('t.did_id', $this->did_id);
+        $criteria->compare("didRel.provider_id", $this->provider_id);
+        $criteria->compare('t.did_user_ip', $this->did_user_ip);
+        $criteria->compare('t.subscription_type', $this->subscription_type);
+        $criteria->compare('t.subcription_status', $this->subcription_status);
+        $criteria->compare('t.did_user_ip', $this->did_user_ip, true);
 
+        $criteria->with = array("didRel", "userRel");
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'pagination' => array(

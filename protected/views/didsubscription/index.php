@@ -37,6 +37,7 @@
                             'value' => '!empty($data->didRel->did_number)?$data->didRel->did_number:"N/A"'
                         ),
                         array(
+                            'header' => "Provider",
                             'name' => 'didRel.providerRel.username',
                             'value' => '!empty($data->didRel->providerRel->username)?$data->didRel->providerRel->username:"N/A"'
                         ),
