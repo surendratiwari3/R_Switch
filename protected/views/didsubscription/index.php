@@ -1,16 +1,16 @@
 <ul class="breadcrumb">
     <li>
         <i class="icon-home"></i>
-        <a href="<?php echo Yii::app()->createUrl("dashboard");?>">Dashboard</a> 
+        <a href="<?php echo Yii::app()->createUrl("dashboard"); ?>">Dashboard</a> 
         <i class="icon-angle-right"></i>
     </li>
-    <li><a href="javascript:;">Users</a></li>
+    <li><a href="javascript:;">DID Subscription</a></li>
 </ul>
 <?php $this->renderPartial("/layouts/_message"); ?>
 <div class="row-fluid sortable ui-sortable">		
     <div class="box span12">
         <div data-original-title="" class="box-header">
-            <h2><i class="halflings-icon user"></i><span class="break"></span>Users</h2>
+            <h2><i class="icon-rss"></i><span class="break"></span>DID Subscription</h2>
             <div class="box-icon">
                 <a class="btn-setting" href="#"><i class="halflings-icon wrench"></i></a>
                 <a class="btn-minimize" href="#"><i class="halflings-icon chevron-up"></i></a>
@@ -25,13 +25,27 @@
                 $deleteRight = true;
                 $columnClass = (!$updateRight && !$deleteRight) ? "hide" : "";
                 $this->widget("zii.widgets.grid.CGridView", array(
-                    "id" => "users-grid",
+                    "id" => "data-grid",
                     "dataProvider" => $model->search(),
                     "columns" => array(
-                        'username',
-                        "user_ip",
-                        'account_type',
-                        'user_type',
+                        array(
+                            'name' => 'user_id',
+                            'value' => '!empty($data->userRel->username)?$data->userRel->username:"N/A"'
+                        ),
+                        array(
+                            'name' => 'did_id',
+                            'value' => '!empty($data->didRel->did_number)?$data->didRel->did_number:"N/A"'
+                        ),
+                        array(
+                            'name' => 'didRel.providerRel.username',
+                            'value' => '!empty($data->didRel->providerRel->username)?$data->didRel->providerRel->username:"N/A"'
+                        ),
+                        'subscription_type',
+                        array(
+                            'name' => 'subcription_status',
+                            'value' => '!empty($data->statusArr[$data->subcription_status])?$data->statusArr[$data->subcription_status]:"N/A"'
+                        ),
+                        'max_inbound_call',
                         array(
                             "class" => "CButtonColumn",
                             "header" => "Action",
@@ -42,14 +56,14 @@
                                 "updateRecord" => array(
                                     "label" => '<i class="halflings-icon white edit"></i> ',
                                     "imageUrl" => false,
-                                    "url" => 'Yii::app()->createUrl("userMaster/update", array("id"=>$data->user_master_id))',
+                                    "url" => 'Yii::app()->createUrl(Yii::app()->controller->id."/update", array("id"=>$data->did_subscription_id))',
                                     "options" => array("class" => "addUpdateRecord mr5 btn btn-success", "title" => "Update"),
                                     "visible" => ($updateRight) ? 'true' : 'false',
                                 ),
                                 "deleteRecord" => array(
                                     "label" => '<i class="halflings-icon white trash"></i> ',
                                     "imageUrl" => false,
-                                    "url" => 'Yii::app()->createUrl("userMaster/delete", array("id"=>$data->user_master_id))',
+                                    "url" => 'Yii::app()->createUrl(Yii::app()->controller->id."/delete", array("id"=>$data->did_subscription_id))',
                                     "options" => array("class" => "deleteRecord btn btn-danger mr5", "title" => "Delete", "style" => "margin-left:10px;"),
                                     "visible" => ($deleteRight) ? 'true' : 'false',
                                 ),
@@ -57,17 +71,17 @@
                         ),
                     ),
                 ));
-                Yii::app()->clientScript->registerScript('actions', "
-                    $('.deleteRecord').live('click',function() {
-                        if(!confirm('Are you sure to delete ?')) return false;                        
-                        var url = $(this).attr('href');
-                        $.post(url,function(res){
-                            $.fn.yiiGridView.update('users-grid');
-                            $('#flash-message').html(res).animate({opacity: 1.0}, 3000).fadeOut('slow');
+                Yii::app()->clientScript->registerScript('actions', "                        
+                        $('.deleteRecord').live('click',function() 
+                        {
+                            if(!confirm('" . common::translateText("DELETE_CONFIRM") . "')) return false;                        
+                            var url = $(this).attr('href');
+                            $.post(url,{status:'" . DidSubscription::DELETED . "'},function(res){
+                                $.fn.yiiGridView.update('data-grid');
+                                $('#flash-message').html(res).animate({opacity: 1.0}, 3000).fadeOut('slow');
+                            });  
                         });
-                        return false;
-                    });
-                ");
+                    ");
                 ?>
             </div>
         </div>

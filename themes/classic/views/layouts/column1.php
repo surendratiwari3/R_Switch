@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: DELL
@@ -9,7 +10,6 @@
 
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
-    
-        <?php echo $content; ?>
-    
+<?php echo $content; ?>
+<section id="modalContainer"></section>    
 <?php $this->endContent(); ?>

@@ -1,6 +1,6 @@
 <?php
 
-class UserMasterController extends Controller {
+class DidsubscriptionController extends Controller {
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -26,7 +26,7 @@ class UserMasterController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index', 'create', 'update', 'admin', 'delete'),
+                'actions' => array('index', 'create', 'update', 'delete'),
                 'users' => array('@'),
             ),
             array('deny', // deny all users
@@ -36,30 +36,20 @@ class UserMasterController extends Controller {
     }
 
     /**
-     * Displays a particular model.
-     * @param integer $id the ID of the model to be displayed
-     */
-    public function actionView($id) {
-        $this->render('view', array(
-            'model' => $this->loadModel($id),
-        ));
-    }
-
-    /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $model = new UserMaster;
+        $model = new DidSubscription;
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['UserMaster'])) {
-            $model->attributes = $_POST['UserMaster'];
+        if (isset($_POST['DidSubscription'])) {
+            $model->attributes = $_POST['DidSubscription'];
             if ($model->save()) {
-                Yii::app()->user->setFlash("success", "You have created user successfully.");
-                $this->redirect(array('admin', 'id' => $model->user_master_id));
+                Yii::app()->user->setFlash("success", common::translateText("ADD_SUCCESS"));
+                $this->redirect(array('index'));
             }
         }
 
@@ -79,11 +69,11 @@ class UserMasterController extends Controller {
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['UserMaster'])) {
-            $model->attributes = $_POST['UserMaster'];
+        if (isset($_POST['DidSubscription'])) {
+            $model->attributes = $_POST['DidSubscription'];
             if ($model->save()) {
-                Yii::app()->user->setFlash("success", "You are updated user successfully.");
-                $this->redirect(array('admin', 'id' => $model->user_master_id));
+                Yii::app()->user->setFlash("success", common::translateText("UPDATE_SUCCESS"));
+                $this->redirect(array('index'));
             }
         }
 
@@ -94,37 +84,47 @@ class UserMasterController extends Controller {
 
     /**
      * Deletes a particular model.
-     * If deletion is successful, the browser will be redirected to the 'admin' page.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id the ID of the model to be deleted
      */
-    public function actionDelete($id) {
-        $this->loadModel($id)->delete();
+    public function actionDelete($id = null) {
+        if (Yii::app()->request->isAjaxRequest) {
+            if (!empty($id)):
+                $idsArr = array($id);
+            else:
+                $idsArr = !empty($_POST["idList"]) ? $_POST["idList"] : array();
+            endif;
+            $update = false;
+            if (!empty($idsArr)) : foreach ($idsArr as $id):
+                    $model = $this->loadModel($id, "DidSubscription");
+                    $model->status = $_REQUEST['status'];
+                    $update = ($model->update(false)) ? true : false;
+                endforeach;
+            endif;
 
-        // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-        if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            if ($update) {
+                Yii::app()->user->setFlash("success", common::translateText("UPDATE_SUCCESS"));
+                echo common::getMessage("success", common::translateText("UPDATE_SUCCESS"));
+            } else {
+                Yii::app()->user->setFlash("danger", common::translateText("UPDATE_FAIL"));
+                echo common::getMessage("danger", common::translateText("UPDATE_FAIL"));
+            }
+            exit;
+        } else {
+            throw new CHttpException(400, common::translateText("400_ERROR"));
+        }
     }
 
     /**
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('UserMaster');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        ));
-    }
-
-    /**
-     * Manages all models.
-     */
-    public function actionAdmin() {
-        $model = new UserMaster('search');
+        $model = new DidSubscription('search');
         $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['UserMaster']))
-            $model->attributes = $_GET['UserMaster'];
+        if (isset($_GET['DidSubscription']))
+            $model->attributes = $_GET['DidSubscription'];
 
-        $this->render('admin', array(
+        $this->render('index', array(
             'model' => $model,
         ));
     }
@@ -133,11 +133,11 @@ class UserMasterController extends Controller {
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer $id the ID of the model to be loaded
-     * @return UserMaster the loaded model
+     * @return DidSubscription the loaded model
      * @throws CHttpException
      */
     public function loadModel($id) {
-        $model = UserMaster::model()->findByPk($id);
+        $model = DidSubscription::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
@@ -145,10 +145,10 @@ class UserMasterController extends Controller {
 
     /**
      * Performs the AJAX validation.
-     * @param UserMaster $model the model to be validated
+     * @param DidSubscription $model the model to be validated
      */
     protected function performAjaxValidation($model) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'user-master-form') {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'data-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }

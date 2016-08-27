@@ -11,8 +11,8 @@ if ($production):
     $DB_PASSWORD = "VnxtNgmF12345";
     $DB_NAME = "class_4_switch";    
 else:
-    $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/photobook/';
-    $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/photobook/';
+    $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/r_switch/';
+    $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/r_switch/';
     $HOST_NAME = "localhost";
     $DB_USERNAME = "root";
     $DB_PASSWORD = "root";
@@ -21,5 +21,3 @@ endif;
 
 $UPLOADS_PATH = $DOCUMENT_PATH . "uploads/";
 $UPLOADS_URL = $WEB_URL . "uploads/";
-$ADMIN_BT_URL = $WEB_URL . "admin_bt/";
-$FRONT_BT_URL = $WEB_URL . "front_bt/";

@@ -18,8 +18,7 @@
  */
 class UserMaster extends CActiveRecord {
 
-    public $pageSize = 10;
-
+    public $pageSize;
     /**
      * @return string the associated database table name
      */
@@ -34,7 +33,7 @@ class UserMaster extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('username, password, user_ip, user_type, user_created_date, user_updated_date', 'required'),
+            array('username, password, user_ip, user_type', 'required'),
             array('outbound_concurrent_call, user_cps, user_package_id', 'numerical', 'integerOnly' => true),
             array('username', 'length', 'max' => 100),
             array('password', 'length', 'max' => 50),
@@ -77,6 +76,16 @@ class UserMaster extends CActiveRecord {
         );
     }
 
+    protected function beforeSave() {
+        if ($this->isNewRecord):
+            $this->user_created_date = common::getDateTime();
+            $this->password = md5($this->password);
+        else:
+            $this->user_updated_date = common::getDateTime();
+        endif;
+        return parent::beforeSave();
+    }
+
     /**
      * Retrieves a list of models based on the current search/filter conditions.
      *
@@ -97,11 +106,11 @@ class UserMaster extends CActiveRecord {
         $criteria->compare('user_ip', $this->user_master_id, true, "OR");
         $criteria->compare('account_type', $this->user_master_id, true, "OR");
         $criteria->compare('user_type', $this->user_master_id, true, "OR");
-        
+
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'pagination' => array(
-                'pageSize' => $this->pageSize,
+                'pageSize' => !empty($this->pageSize)?$this->pageSize:Yii::app()->params->defaultPageSize,
             ),
         ));
     }
@@ -116,4 +125,10 @@ class UserMaster extends CActiveRecord {
         return parent::model($className);
     }
 
+    public function getProviderList(){
+        return CHtml::ListData(UserMaster::model()->findAllByAttributes(array("user_type"=>"provider")), 'user_master_id', 'username');
+    }
+    public function getUserList(){
+        return CHtml::ListData(UserMaster::model()->findAllByAttributes(array("user_type"=>"customer")), 'user_master_id', 'username');
+    }
 }

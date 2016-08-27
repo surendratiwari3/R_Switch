@@ -1,4 +1,5 @@
 <?php
+
 include_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'constants.php');
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
@@ -17,18 +18,19 @@ return array(
         'application.vendors.*',
     ),
     'modules' => array(
-    // uncomment the following to enable the Gii tool
-    /*
-      'gii'=>array(
-      'class'=>'system.gii.GiiModule',
-      'password'=>'Enter Your Password Here',
-      // If removed, Gii defaults to localhost only. Edit carefully to taste.
-      'ipFilters'=>array('127.0.0.1','::1'),
-      ),
-     */
+        // uncomment the following to enable the Gii tool
+        'gii' => array(
+            'class' => 'system.gii.GiiModule',
+            'password' => 'mano',
+            // If removed, Gii defaults to localhost only. Edit carefully to taste.
+            'ipFilters' => array('127.0.0.1', '::1'),
+        ),
     ),
     // application components
     'components' => array(
+        'messages' => array(
+            'language' => 'en'
+        ),
         'user' => array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
@@ -73,6 +75,10 @@ return array(
     'params' => array(
         // this is used in contact page
         'adminEmail' => 'webmaster@example.com',
-        'pageSizeList'=>array("10"=>"10","20"=>"20","50"=>"50","100"=>"100")
+        'pageSizeList' => array("10" => "10", "20" => "20", "50" => "50", "100" => "100"),
+        'defaultPageSize' => 10,
+        'productName' => $PRODUCT_NAME,
+        'uploadsPath' => $UPLOADS_PATH,
+        'uploadsURL' => $UPLOADS_URL,
     ),
 );

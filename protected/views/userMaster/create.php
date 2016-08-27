@@ -1,5 +1,10 @@
 <ul class="breadcrumb">
     <li>
+        <i class="icon-home"></i>
+        <a href="<?php echo Yii::app()->createUrl("dashboard"); ?>">Dashboard</a> 
+        <i class="icon-angle-right"></i>
+    </li>
+    <li>
         <i class="icon-user"></i>
         <a href="<?php echo Yii::app()->createUrl('userMaster/admin') ?>">Users</a> 
         <i class="icon-angle-right"></i>

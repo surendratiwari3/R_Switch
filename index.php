@@ -1,5 +1,8 @@
 <?php
-date_default_timezone_set('GMT');
+ini_set('display_errors',1);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+ini_set('set_time_zone','Asia/Kalkata');
+//date_default_timezone_set('GMT');
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/../yii/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';

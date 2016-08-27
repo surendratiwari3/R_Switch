@@ -12,7 +12,7 @@ $form = $this->beginWidget('CActiveForm', array(
         ));
 ?>
 <p class="note">Fields with <span class="required">*</span> are required.</p>
-<?php echo $form->errorSummary($model); ?>
+<?php //echo $form->errorSummary($model); ?>
 <fieldset>
     <div class="control-group">
         <?php echo $form->labelEx($model, 'user_ip', array("class" => "control-label")); ?>
@@ -28,6 +28,15 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->error($model, 'username'); ?>
         </div>
     </div>
+    <?php if($model->isNewRecord){?>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'password', array("class" => "control-label")); ?>
+        <div class="controls">
+            <?php echo $form->passwordField($model, 'password'); ?>
+            <?php echo $form->error($model, 'password'); ?>
+        </div>
+    </div>
+    <?php } ?>
     <div class="control-group">
         <?php echo $form->labelEx($model, 'account_type', array("class" => "control-label")); ?>
         <div class="controls">
@@ -61,20 +70,6 @@ $form = $this->beginWidget('CActiveForm', array(
         <div class="controls">
             <?php echo $form->textField($model, 'user_package_id'); ?>
             <?php echo $form->error($model, 'user_package_id'); ?>
-        </div>
-    </div>
-    <div class="control-group">
-        <?php echo $form->labelEx($model, 'user_created_date', array("class" => "control-label")); ?>
-        <div class="controls">
-            <?php echo $form->textField($model, 'user_created_date'); ?>
-            <?php echo $form->error($model, 'user_created_date'); ?>
-        </div>
-    </div>
-    <div class="control-group">
-        <?php echo $form->labelEx($model, 'user_updated_date', array("class" => "control-label")); ?>
-        <div class="controls">
-            <?php echo $form->textField($model, 'user_updated_date'); ?>
-            <?php echo $form->error($model, 'user_updated_date'); ?>
         </div>
     </div>
     <div class="form-actions">
