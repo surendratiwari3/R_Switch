@@ -7,19 +7,20 @@
     <li><a href="javascript:;">DID Subscription</a></li>
 </ul>
 <?php $this->renderPartial("/layouts/_message"); ?>
-<div class="row-fluid sortable ui-sortable">		
+<?php $this->renderPartial("_search", array("model" => $model)); ?>
+<div class="row-fluid">		
     <div class="box span12">
-        <div data-original-title="" class="box-header">
+        <div class="box-header">
             <h2><i class="icon-rss"></i><span class="break"></span>DID Subscription</h2>
-            <div class="box-icon">
-                <a class="btn-setting" href="#"><i class="halflings-icon wrench"></i></a>
-                <a class="btn-minimize" href="#"><i class="halflings-icon chevron-up"></i></a>
-                <a class="btn-close" href="#"><i class="halflings-icon remove"></i></a>
-            </div>
+            <h2 class="box-icon">
+                <a style="margin-top:-9px;" title="Create Did Subscription" href="<?php echo Yii::app()->createUrl(Yii::app()->controller->id . "/create"); ?>">
+                    <h2><i class="icon-plus-sign"></i></h2>
+                    Create DID Subscription
+                </a>
+            </h2>
         </div>
         <div class="box-content">
-            <div role="grid" class="dataTables_wrapper" id="DataTables_Table_0_wrapper">                
-                <?php $this->renderPartial("_search", array("model" => $model)); ?>
+            <div role="grid" class="dataTables_wrapper" id="DataTables_Table_0_wrapper">                                
                 <?php
                 $updateRight = true;
                 $deleteRight = true;

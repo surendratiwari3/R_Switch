@@ -38,6 +38,12 @@
                 "class" => "btn btn-success importRecord"
             ));
             ?>
+            <?php
+            echo CHtml::Link('<i class="icon-file"></i>', "did_master.csv", array(
+                "title" => "Sample File",
+                "class" => "btn btn-blue"
+            ));
+            ?>
         </div>
     </div>               
     <?php $this->endWidget(); ?>
