@@ -8,7 +8,7 @@
             </div>
             <?php
             $form = $this->beginWidget('CActiveForm', array(
-                'id' => 'data-form',
+                'id' => 'import-form',
                 'enableAjaxValidation' => true,
                 'enableClientValidation' => true,
                 'htmlOptions' => array(
@@ -30,7 +30,7 @@
             </div>
             <div class="modal-footer">
                 <a href="#" class="btn" data-dismiss="modal">Close</a>
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
             <?php $this->endWidget(); ?>
         </div>

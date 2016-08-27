@@ -49,9 +49,8 @@ class DidMaster extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('did_number, provider_id, status, provider_monthly_cost, provider_per_minute_cost, customer_monthly_cost, customer_per_minute_cost', 'required'),
-            array('file', 'required', 'on' => 'import'),
-            array('file', 'file', 'allowEmpty' => true, 'types' => 'csv', 'on' => 'import'),
+            array('file', 'file', 'allowEmpty' => false, 'types' => 'csv', 'on' => 'import'),
+            array('did_number, provider_id, status, provider_monthly_cost, provider_per_minute_cost, customer_monthly_cost, customer_per_minute_cost', 'required','on'=>'crud'),
             array('provider_id', 'numerical', 'integerOnly' => true),
             array('provider_monthly_cost, provider_per_minute_cost, customer_monthly_cost, customer_per_minute_cost', 'numerical'),
             array('did_number', 'length', 'max' => 30),

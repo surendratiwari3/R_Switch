@@ -40,7 +40,7 @@ class DidboxController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $model = new DidMaster;
+        $model = new DidMaster('crud');
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
@@ -65,7 +65,7 @@ class DidboxController extends Controller {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
-
+        $model->scenario = 'crud';
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
@@ -156,45 +156,55 @@ class DidboxController extends Controller {
 
     public function actionImport() {
         if (Yii::app()->request->isPostRequest) {
-            $model = new DidMaster();
+            $model = new DidMaster("import");
+            if (isset($_POST['ajax']) && $_POST['ajax'] === 'import-form') {
+                echo CActiveForm::validate($model);
+                Yii::app()->end();
+            }
             if (isset($_FILES['DidMaster'])) {
-                $model->file = CUploadedFile::getInstance($model, 'file');
-                $filePath = Yii::app()->params->uploadsPath . time() . $model->file->getName();
-                $model->file->saveAs($filePath);
+                $model->attributes = $_POST['Didmaster'];
+                $file = CUploadedFile::getInstance($model, 'file');
 
-                $fileHandler = fopen($filePath, 'r');
-                $records = array();
-                $error = null;
-                if ($fileHandler) {
-                    $i = 1;
-                    while ($line = fgetcsv($fileHandler, 1000)) {
-                        $model = new DidMaster();
-                        $model->did_number = $line[0];
-                        $model->status = $line[1];
-                        $model->provider_id = $line[2];
-                        $model->provider_monthly_cost = $line[3];
-                        $model->provider_per_minute_cost = $line[4];
-                        $model->customer_monthly_cost = $line[5];
-                        $model->customer_per_minute_cost = $line[6];
-                        $records[] = $model->attributes;
-                        if (!$model->validate()) {
-                            $error = "Error in line # " . $i . ", Please correct and try again.";
-                            break;
+                if (!empty($file)) {
+                    $model->file = $file->getName();
+                    $filePath = Yii::app()->params->uploadsPath . time() . $model->file;
+                    $file->saveAs($filePath);
+                    $fileHandler = fopen($filePath, 'r');
+                    $records = array();
+                    $error = null;
+                    if ($fileHandler) {
+                        $i = 1;
+                        while ($line = fgetcsv($fileHandler, 1000)) {
+                            $model = new DidMaster();
+                            $model->did_number = $line[0];
+                            $model->status = $line[1];
+                            $model->provider_id = $line[2];
+                            $model->provider_monthly_cost = $line[3];
+                            $model->provider_per_minute_cost = $line[4];
+                            $model->customer_monthly_cost = $line[5];
+                            $model->customer_per_minute_cost = $line[6];
+                            $records[] = $model->attributes;
+                            if (!$model->validate()) {
+                                $error = "Error in line # " . $i . ", Please correct and try again.";
+                                break;
+                            }
+                            $i++;
                         }
-                        $i++;
                     }
-                }
-                if ($error) {
-                    Yii::app()->user->setFlash("danger", $error);
+                    if ($error) {
+                        Yii::app()->user->setFlash("danger", $error);
+                    } else {
+                        foreach ($records as $record) {
+                            $model = new DidMaster();
+                            $model->attributes = $record;
+                            $model->save(false);
+                        }
+                        Yii::app()->user->setFlash("success", "Records imported successfuly.");
+                    }
+                    unlink($filePath);
                 } else {
-                    foreach ($records as $record) {
-                        $model = new DidMaster();
-                        $model->attributes = $record;
-                        $model->save(false);
-                    }
-                    Yii::app()->user->setFlash("success", "Records imported successfuly.");
+                    Yii::app()->user->setFlash("danger", "Invalid file.");
                 }
-                unlink($filePath);
                 $this->redirect(array("index"));
             }
             $outputJs = Yii::app()->request->isAjaxRequest;
