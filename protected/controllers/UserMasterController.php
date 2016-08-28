@@ -26,7 +26,7 @@ class UserMasterController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index', 'create', 'update', 'admin', 'delete'),
+                'actions' => array('index', 'create', 'update', 'admin', 'delete','profile'),
                 'users' => array('@'),
             ),
             array('deny', // deny all users
@@ -200,5 +200,23 @@ class UserMasterController extends Controller {
             Yii::app()->end();
         }
     }
+     /*
+    Function for Viewing Admin Profile
+    */
+    public function actionProfile($id=0)
+    {
+	$id= Yii::app()->user->id;
+        if ($id != Yii::app()->user->id) 
+        {
+            Yii::app()->user->setFlash('error', 'Invalid URL.');
+            $this->redirect(array('admin'));
+        }
+        $model = $this->loadModel($id);
+
+        $this->render('view', array(
+            'model' => $model,
+        ));
+    }
+
 
 }

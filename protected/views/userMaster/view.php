@@ -1,36 +1,23 @@
-<?php
-/* @var $this UserMasterController */
-/* @var $model UserMaster */
-
-$this->breadcrumbs=array(
-	'User Masters'=>array('index'),
-	$model->user_master_id,
-);
-
-$this->menu=array(
-	array('label'=>'List UserMaster', 'url'=>array('index')),
-	array('label'=>'Create UserMaster', 'url'=>array('create')),
-	array('label'=>'Update UserMaster', 'url'=>array('update', 'id'=>$model->user_master_id)),
-	array('label'=>'Delete UserMaster', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->user_master_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage UserMaster', 'url'=>array('admin')),
-);
-?>
-
-<h1>View UserMaster #<?php echo $model->user_master_id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'user_master_id',
-		'username',
-		'password',
-		'user_ip',
-		'account_type',
-		'user_type',
-		'outbound_concurrent_call',
-		'user_cps',
-		'user_package_id',
-		'user_created_date',
-		'user_updated_date',
-	),
-)); ?>
+<ul class="breadcrumb">
+    <li>
+        <i class="icon-home"></i>
+        <a href="<?php echo Yii::app()->createUrl("dashboard"); ?>">Dashboard</a> 
+        <i class="icon-angle-right"></i>
+    </li>
+    <li><a href="#">Profile</a></li>
+</ul>
+<div class="row-fluid sortable">
+    <div class="box span12">
+        <div class="box-header" data-original-title>
+            <h2><i class="halflings-icon edit"></i><span class="break"></span>My Profile (<?php echo $model->username;?>) </h2>
+            <div class="box-icon">
+                <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+                <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            <?php $this->renderPartial("_profile", array("model" => $model)); ?>
+        </div>
+    </div>
+</div>
