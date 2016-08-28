@@ -19,6 +19,14 @@
 class UserMaster extends CActiveRecord {
 
     public $pageSize;
+    public $credit=0;
+    public $first_name;
+    public $last_name;
+    public $phone_number;
+    public $invoice_email_address;
+    public $user_email_address;
+    public $invoice_type;
+    public $user_status;
     /**
      * @return string the associated database table name
      */
@@ -33,7 +41,7 @@ class UserMaster extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('username, password, user_ip, user_type', 'required'),
+            array('username, password, user_ip, user_type,first_name,last_name,invoice_email_address,user_email_address,user_status,invoice_type', 'required'),
             array('outbound_concurrent_call, user_cps, user_package_id', 'numerical', 'integerOnly' => true),
             array('username', 'length', 'max' => 100),
             array('password', 'length', 'max' => 50),
@@ -43,7 +51,7 @@ class UserMaster extends CActiveRecord {
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('user_master_id, username, password, user_ip, account_type, user_type, outbound_concurrent_call, user_cps, user_package_id, user_created_date, user_updated_date', 'safe', 'on' => 'search'),
-            array("pageSize", "safe")
+            array("pageSize,credit,first_name,last_name,invoice_email_address,user_email_address,user_status,invoice_type", "safe")
         );
     }
 
@@ -65,16 +73,24 @@ class UserMaster extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'user_master_id' => 'User Master',
-            'username' => 'Username',
-            'password' => 'Password',
-            'user_ip' => 'User Ip',
-            'account_type' => 'Account Type',
-            'user_type' => 'User Type',
-            'outbound_concurrent_call' => 'Outbound Concurrent Call',
-            'user_cps' => 'User Cps',
-            'user_package_id' => 'User Package',
+            'username' => 'USERNAME',
+            'password' => 'PASSWORD',
+            'user_ip' => 'USER IP',
+            'account_type' => 'ACCOUNT TYPE',
+            'user_type' => 'USER TYPE',
+            'outbound_concurrent_call' => 'OUTBOUND CALL LIMIT',
+            'user_cps' => 'CPS',
+            'user_package_id' => 'PACKAGE',
             'user_created_date' => 'User Created Date',
             'user_updated_date' => 'User Updated Date',
+            'credit' => 'CREDIT',
+            'first_name'=> 'FIRST NAME',
+	    'last_name'=> 'LAST NAME',
+	    'phone_number'=> 'PHONE NUMBER',
+	    'invoice_email_address'=> 'INVOICE EMAIL',
+	    'user_email_address'=> 'USER EMAIL',
+	    'invoice_type'=> 'INVOICE TYPE',
+	    'user_status'=> 'USER STATUS',
         );
     }
 
