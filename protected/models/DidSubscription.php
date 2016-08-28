@@ -77,7 +77,7 @@ class DidSubscription extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'did_subscription_id' => 'Did Subscription',
-            'user_id' => 'USER NAME',
+            'user_id' => 'DID USER',
             'did_id' => 'DID',
             'did_user_ip' => 'DID IP',
             'subscription_type' => 'SUBSCRIPTION TYPE',
