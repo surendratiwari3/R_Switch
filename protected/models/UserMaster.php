@@ -126,7 +126,9 @@ class UserMaster extends CActiveRecord {
         $criteria->compare('username', $this->user_master_id, true, "OR");
         $criteria->compare('user_ip', $this->user_master_id, true, "OR");
         $criteria->compare('account_type', $this->user_master_id, true, "OR");
-        $criteria->compare('user_type', $this->user_master_id, true, "OR");
+        $criteria->compare('user_type', $this->user_master_id, true);
+        $criteria->with = array('user_details');
+        $criteria->compare('user_status',"<>2",true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

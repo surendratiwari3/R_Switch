@@ -101,13 +101,30 @@ class UserMasterController extends Controller {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
-
+        $balancemodel = UserBalanceDetails::model()->findByAttributes(array('user_id' => $id));
+	$userdetailmodel = UserDetails::model()->findByAttributes(array('users_id' => $id));
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['UserMaster'])) {
             $model->attributes = $_POST['UserMaster'];
             if ($model->save()) {
+		if($model->account_type=="PREPAID")
+		{
+			$balancemodel->prepaid_balance = $model->credit;
+		}
+		else
+		{
+			$balancemodel->postpaid_credit = $model->credit;
+		}
+		$balancemodel->save();
+		$userdetailmodel->first_name = $model->first_name;
+		$userdetailmodel->last_name = $model->last_name;
+		$userdetailmodel->invoice_email_address = $model->invoice_email_address;
+		$userdetailmodel->user_email_address = $model->user_email_address;
+		$userdetailmodel->invoice_type = $model->invoice_type;
+		$userdetailmodel->user_status = $model->user_status;
+		$userdetailmodel->save();
                 Yii::app()->user->setFlash("success", "You are updated user successfully.");
                 $this->redirect(array('admin', 'id' => $model->user_master_id));
             }
@@ -124,11 +141,15 @@ class UserMasterController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
-        $this->loadModel($id)->delete();
-
+        //$this->loadModel($id)->delete();
+	  $userdetailmodel = UserDetails::model()->findByAttributes(array('users_id' => $id));
+	  $userdetailmodel->user_status =2;
+	  if($userdetailmodel->save())
+	  {
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-        if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+       // if (!isset($_GET['ajax']))
+            $this->redirect(array('admin', 'id' => $this->user_master_id));
+            }
     }
 
     /**
