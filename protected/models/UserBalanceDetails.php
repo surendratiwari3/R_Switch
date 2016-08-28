@@ -27,7 +27,7 @@ class UserBalanceDetails extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('prepaid_balance, postpaid_credit, user_id', 'required'),
+			array('user_id', 'required'),
 			array('user_id', 'numerical', 'integerOnly'=>true),
 			array('prepaid_balance, postpaid_credit', 'numerical'),
 			// The following rule is used by search().

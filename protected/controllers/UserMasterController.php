@@ -51,15 +51,41 @@ class UserMasterController extends Controller {
      */
     public function actionCreate() {
         $model = new UserMaster;
-
+        $balancemodel = new UserBalanceDetails;
+        $userdetailmodel = new UserDetails;
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
-
         if (isset($_POST['UserMaster'])) {
             $model->attributes = $_POST['UserMaster'];
             if ($model->save()) {
-                Yii::app()->user->setFlash("success", "You have created user successfully.");
-                $this->redirect(array('admin', 'id' => $model->user_master_id));
+            $balancemodel->user_id = $model->user_master_id;
+            $userdetailmodel->users_id = $model->user_master_id;
+            $userdetailmodel->first_name = $model->first_name;
+            $userdetailmodel->last_name = $model->last_name;
+            $userdetailmodel->country_id = 10;
+            $userdetailmodel->user_address = "INDIA";
+            $userdetailmodel->phone_number = "919724810967";
+            $userdetailmodel->invoice_email_address = $model->invoice_email_address;
+            $userdetailmodel->user_email_address = $model->user_email_address;
+            $userdetailmodel->invoice_type = $model->invoice_type;
+            $userdetailmodel->user_status = $model->user_status;
+            if($model->account_type=="PREPAID")
+            {
+		 $balancemodel->prepaid_balance = $model->credit;
+	    }
+	    else
+	    {
+		  $balancemodel->postpaid_credit = $model->credit;
+	    }
+	    
+	    print_r($userdetailmodel);
+	   // die;
+	    $balancemodel->save();
+	    $userdetailmodel->save();
+	    
+            Yii::app()->user->setFlash("success", "You have created user successfully.");
+            $this->redirect(array('admin', 'id' => $model->user_master_id));
+            
             }
         }
 

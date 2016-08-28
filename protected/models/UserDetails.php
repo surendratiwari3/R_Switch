@@ -34,12 +34,6 @@ class UserDetails extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, country_id, user_address, phone_number, invoice_email_address, user_email_address, invoice_start_date', 'required'),
-			array('country_id', 'numerical', 'integerOnly'=>true),
-			array('first_name, last_name, user_address, invoice_email_address, user_email_address', 'length', 'max'=>100),
-			array('phone_number', 'length', 'max'=>30),
-			array('invoice_type', 'length', 'max'=>11),
-			array('user_status', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('users_id, first_name, last_name, country_id, user_address, phone_number, invoice_email_address, user_email_address, invoice_start_date, invoice_type, user_status', 'safe', 'on'=>'search'),

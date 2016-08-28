@@ -13,6 +13,24 @@ $form = $this->beginWidget('CActiveForm', array(
 ?>
 <p class="note">Fields with <span class="required">*</span> are required.</p>
 <?php //echo $form->errorSummary($model); ?>
+   
+    <?php 
+    if(!$model->isNewRecord)
+    {
+	$model->last_name = $model->user_details->last_name;
+	$model->first_name = $model->user_details->first_name;
+	$model->invoice_email_address = $model->user_details->invoice_email_address;
+	$model->user_email_address = $model->user_details->user_email_address;
+	if($model->account_type=="PREPAID")
+	{
+	  $model->credit = $model->user_balance->prepaid_balance;
+	}
+	else
+	{
+	  $model->credit = $model->user_balance->postpaid_credit;
+	}
+    }
+    ?>
 <fieldset>
     <div class="row">
     <?php if($model->isNewRecord){?>
@@ -59,8 +77,6 @@ $form = $this->beginWidget('CActiveForm', array(
     <?php }?>
     
         <div class="row">
-    
-   
     <div class="control-group span5">
         <?php echo $form->labelEx($model, 'credit', array("class" => "control-label")); ?>
         <div class="controls">
@@ -77,8 +93,7 @@ $form = $this->beginWidget('CActiveForm', array(
         </div>
     </div>
     </div>
-    
-    
+ 
     
     <div class="row">
     <div class="control-group span5">
@@ -122,7 +137,8 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="control-group span5">
         <?php echo $form->labelEx($model, 'invoice_type', array("class" => "control-label")); ?>
         <div class="controls">
-            <?php echo $form->textField($model, 'invoice_type'); ?>
+	                  <?php echo $form->dropDownList($model,'invoice_type', 
+              array('daily' => 'DAILY', 'weekly' => 'WEEKLY','monthly' => 'MONTHLY','quartly' => 'QUARTLY','half_yearly' => 'HALF_YEARLY','yearly' => 'YEARLY'));?>
             <?php echo $form->error($model, 'invoice_type'); ?>
         </div>
     </div>
@@ -130,7 +146,8 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="control-group span5">
         <?php echo $form->labelEx($model, 'user_status', array("class" => "control-label")); ?>
         <div class="controls">
-            <?php echo $form->textField($model, 'user_status'); ?>
+                <?php echo $form->dropDownList($model,'user_status', 
+              array('1' => 'ACTIVE', '0' => 'INACTIVE'));?>
             <?php echo $form->error($model, 'user_status'); ?>
         </div>
     </div>
@@ -148,7 +165,8 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="control-group span5">
         <?php echo $form->labelEx($model, 'user_package_id', array("class" => "control-label")); ?>
         <div class="controls">
-            <?php echo $form->textField($model, 'user_package_id'); ?>
+        
+        <?php echo $form->dropDownList($model, 'user_package_id', UserMaster::model()->getPackageList(), array("prompt" => common::translateText("DROPDOWN_TEXT"))); ?>
             <?php echo $form->error($model, 'user_package_id'); ?>
         </div>
     </div>

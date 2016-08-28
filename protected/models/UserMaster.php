@@ -41,7 +41,7 @@ class UserMaster extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('username, password, user_ip, user_type,account_type,credit,outbound_concurrent_call,first_name,last_name,invoice_email_address,user_email_address,user_status,invoice_type', 'required'),
+            array('username, password, user_ip, user_type,account_type,credit,user_cps,user_package_id,outbound_concurrent_call,first_name,last_name,invoice_email_address,user_email_address,user_status,invoice_type', 'required'),
             array('outbound_concurrent_call, user_cps, user_package_id', 'numerical', 'integerOnly' => true),
             array('credit', 'type', 'type'=>'float'),
             array('user_email_address,invoice_email_address','email'),
@@ -151,6 +151,10 @@ class UserMaster extends CActiveRecord {
     }
     public function getUserList(){
         return CHtml::ListData(UserMaster::model()->findAllByAttributes(array("user_type"=>"customer")), 'user_master_id', 'username');
+    }
+    public function getPackageList()
+    {
+	    return CHtml::ListData(PackageMaster::model()->findAll(),'package_id','package_name');
     }
     
 }
