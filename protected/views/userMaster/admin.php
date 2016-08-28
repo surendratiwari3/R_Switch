@@ -29,9 +29,19 @@
                     "dataProvider" => $model->search(),
                     "columns" => array(
                         'username',
+			array(
+                        'value' => '$data->user_details->user_email_address',
+                        'name'  => 'Email',
+                        ),
                         "user_ip",
                         'account_type',
                         'user_type',
+			array(
+                        'value' => '($data["account_type"]=="PREPAID")?$data->user_balance->prepaid_balance:$data->user_balance->postpaid_credit',
+                        //'name'=>'server_id'
+                        'name' => 'Balance'
+                        ),
+
                         array(
                             "class" => "CButtonColumn",
                             "header" => "Action",

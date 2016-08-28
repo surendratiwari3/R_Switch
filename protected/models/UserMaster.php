@@ -53,8 +53,10 @@ class UserMaster extends CActiveRecord {
     public function relations() {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
-        return array(
-        );
+     return array(
+                'user_balance' => array(self::HAS_ONE, 'UserBalanceDetails', array('user_id'=>'user_master_id')),
+                'user_details' => array(self::HAS_ONE, 'UserDetails', array('users_id'=>'user_master_id')),
+                );
     }
 
     /**
