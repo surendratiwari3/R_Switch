@@ -41,13 +41,16 @@ class UserMaster extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('username, password, user_ip, user_type,first_name,last_name,invoice_email_address,user_email_address,user_status,invoice_type', 'required'),
+            array('username, password, user_ip, user_type,account_type,credit,outbound_concurrent_call,first_name,last_name,invoice_email_address,user_email_address,user_status,invoice_type', 'required'),
             array('outbound_concurrent_call, user_cps, user_package_id', 'numerical', 'integerOnly' => true),
+            array('credit', 'type', 'type'=>'float'),
+            array('user_email_address,invoice_email_address','email'),
+            array('username','unique', 'message'=>'This username already exists.'),
+            array('username', 'length', 'min' => 12),
+            array('password', 'length', 'min' => 10),
             array('username', 'length', 'max' => 100),
             array('password', 'length', 'max' => 50),
             array('user_ip', 'length', 'max' => 30),
-            array('account_type', 'length', 'max' => 8),
-            array('user_type', 'length', 'max' => 12),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('user_master_id, username, password, user_ip, account_type, user_type, outbound_concurrent_call, user_cps, user_package_id, user_created_date, user_updated_date', 'safe', 'on' => 'search'),
@@ -78,7 +81,7 @@ class UserMaster extends CActiveRecord {
             'user_ip' => 'USER IP',
             'account_type' => 'ACCOUNT TYPE',
             'user_type' => 'USER TYPE',
-            'outbound_concurrent_call' => 'OUTBOUND CALL LIMIT',
+            'outbound_concurrent_call' => 'OUTCALL LIMIT',
             'user_cps' => 'CPS',
             'user_package_id' => 'PACKAGE',
             'user_created_date' => 'User Created Date',
@@ -149,4 +152,5 @@ class UserMaster extends CActiveRecord {
     public function getUserList(){
         return CHtml::ListData(UserMaster::model()->findAllByAttributes(array("user_type"=>"customer")), 'user_master_id', 'username');
     }
+    
 }

@@ -19,6 +19,7 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="control-group span5">
         <?php echo $form->labelEx($model, 'username', array("class" => "control-label")); ?>
         <div class="controls">
+	    <?php $model->username=uniqid()?>
             <?php echo $form->textField($model, 'username'); ?>
             <?php echo $form->error($model, 'username'); ?>
         </div>
@@ -28,7 +29,8 @@ $form = $this->beginWidget('CActiveForm', array(
    <div class="control-group span5">
         <?php echo $form->labelEx($model, 'user_type', array("class" => "control-label")); ?>
         <div class="controls">
-            <?php echo $form->textField($model, 'user_type'); ?>
+        <?php echo $form->dropDownList($model,'user_type', 
+              array('subadmin' => 'SUBADMIN','provider' => 'PROVIDER','customer' => 'CUSTOMER','finance user' => 'FINANCE USER','rate admin' => 'RATE ADMIN'));?>
             <?php echo $form->error($model, 'user_type'); ?>
         </div>
     </div>
@@ -48,7 +50,8 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="control-group span5">
         <?php echo $form->labelEx($model, 'account_type', array("class" => "control-label")); ?>
         <div class="controls">
-            <?php echo $form->textField($model, 'account_type'); ?>
+           <?php echo $form->dropDownList($model,'account_type', 
+              array('PREPAID' => 'PREPAID', 'POSTPAID' => 'POSTPAID'));?>
             <?php echo $form->error($model, 'account_type'); ?>
         </div>
     </div>
