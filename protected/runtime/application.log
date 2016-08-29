@@ -812,3 +812,13 @@ Stack trace:
 #34 {main}
 REQUEST_URI=/R_Switch/index.php?r=didbox/index
 ---
+2016/08/29 19:08:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/html/yii/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=gii
+---
