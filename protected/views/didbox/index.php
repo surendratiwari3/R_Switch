@@ -65,7 +65,10 @@
                             'name' => 'status',
                             'value' => '!empty($data->statusArr[$data->status])?$data->statusArr[$data->status]:"N/A"'
                         ),
-                        'did_availability',
+			array(
+			     'name' => 'did_availability',
+			     'value' => '($data->did_availability==1)?"AVAILABLE":"NOT AVAILABLE"'
+			), 
                         'provider_monthly_cost',
                         'provider_per_minute_cost',
                         'customer_monthly_cost',

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "did_master".
  *
@@ -15,17 +14,13 @@
  * @property double $customer_per_minute_cost
  */
 class DidMaster extends CActiveRecord {
-
     public $pageSize;
-
     const DEACTIVE = 0;
     const ACTIVE = 1;
     const DELETED = 2;
-
-    public $statusArr = array(self::DEACTIVE => "Deactive", self::ACTIVE => "Active", self::DELETED => "Deleted");
-    public $availabilityArr = array(1 => "Weekly", 2 => "Monthly", 3 => "Yearly");
+    public $statusArr = array(self::DEACTIVE => "Deactive", self::ACTIVE => "Active");
+    public $availabilityArr = array(1 => "AVAILABLE",0=>"NOT AVAILABLE");
     public $file;
-
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -34,14 +29,12 @@ class DidMaster extends CActiveRecord {
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
-
     /**
      * @return string the associated database table name
      */
     public function tableName() {
         return 'did_master';
     }
-
     /**
      * @return array validation rules for model attributes.
      */
@@ -50,7 +43,7 @@ class DidMaster extends CActiveRecord {
         // will receive user inputs.
         return array(
             array('file', 'file', 'allowEmpty' => false, 'types' => 'csv', 'on' => 'import'),
-            array('did_number, provider_id, status, provider_monthly_cost, provider_per_minute_cost, customer_monthly_cost, customer_per_minute_cost', 'required', 'on' => 'crud'),
+            array('did_number, provider_id, status, did_availability,provider_monthly_cost, provider_per_minute_cost, customer_monthly_cost, customer_per_minute_cost', 'required', 'on' => 'crud'),
             array('provider_id', 'numerical', 'integerOnly' => true),
             array('provider_monthly_cost, provider_per_minute_cost, customer_monthly_cost, customer_per_minute_cost', 'numerical'),
             array('did_number', 'length', 'max' => 30),
@@ -62,7 +55,6 @@ class DidMaster extends CActiveRecord {
             array('did_id, did_number, provider_id, status, did_availability, provider_monthly_cost, provider_per_minute_cost, customer_monthly_cost, customer_per_minute_cost', 'safe', 'on' => 'search'),
         );
     }
-
     /**
      * Default scope whilefetching results
      */
@@ -78,7 +70,6 @@ class DidMaster extends CActiveRecord {
             );
         }
     }
-
     /**
      * @return array relational rules.
      */
@@ -89,7 +80,6 @@ class DidMaster extends CActiveRecord {
             'providerRel' => array(self::BELONGS_TO, 'UserMaster', 'provider_id')
         );
     }
-
     /**
      * @return array customized attribute labels (name=>label)
      */
@@ -106,7 +96,6 @@ class DidMaster extends CActiveRecord {
             'customer_per_minute_cost' => 'Customer Per Minute Cost',
         );
     }
-
     /**
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
@@ -114,9 +103,7 @@ class DidMaster extends CActiveRecord {
     public function search() {
         // Warning: Please modify the following code to remove attributes that
         // should not be searched.
-
         $criteria = new CDbCriteria;
-
         $criteria->compare('did_number', $this->did_number, true);
         $criteria->compare('provider_id', $this->provider_id);
         $criteria->compare('did_availability', $this->did_availability);
@@ -129,11 +116,9 @@ class DidMaster extends CActiveRecord {
             ),
         ));
     }
-
     public function getDidList($status = null) {
         $criteria = new CDbCriteria();
         $criteria->compare("status", $status);
         return CHtml::ListData(self::findAll($criteria), "did_id", "did_number");
     }
-
 }
