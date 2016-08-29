@@ -41,7 +41,10 @@
                         //'name'=>'server_id'
                         'name' => 'Balance'
                         ),
-
+			array(
+                        'value' => '($data->user_details->user_status=="1")?"ACTIVE":"INACTIVE"',
+                        'name'  => 'Status',
+                        ),
                         array(
                             "class" => "CButtonColumn",
                             "header" => "Action",
