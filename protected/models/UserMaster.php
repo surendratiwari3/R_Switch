@@ -19,6 +19,14 @@
 class UserMaster extends CActiveRecord {
 
     public $pageSize;
+    public $credit=0;
+    public $first_name;
+    public $last_name;
+    public $phone_number;
+    public $invoice_email_address;
+    public $user_email_address;
+    public $invoice_type;
+    public $user_status;
     /**
      * @return string the associated database table name
      */
@@ -33,17 +41,20 @@ class UserMaster extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('username, password, user_ip, user_type', 'required'),
+            array('username, password, user_ip, user_type,account_type,credit,user_cps,user_package_id,outbound_concurrent_call,first_name,last_name,invoice_email_address,user_email_address,user_status,invoice_type', 'required'),
             array('outbound_concurrent_call, user_cps, user_package_id', 'numerical', 'integerOnly' => true),
+            array('credit', 'type', 'type'=>'float'),
+            array('user_email_address,invoice_email_address','email'),
+            array('username','unique', 'message'=>'This username already exists.'),
+            array('username', 'length', 'min' => 12),
+            array('password', 'length', 'min' => 10),
             array('username', 'length', 'max' => 100),
             array('password', 'length', 'max' => 50),
             array('user_ip', 'length', 'max' => 30),
-            array('account_type', 'length', 'max' => 8),
-            array('user_type', 'length', 'max' => 12),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('user_master_id, username, password, user_ip, account_type, user_type, outbound_concurrent_call, user_cps, user_package_id, user_created_date, user_updated_date', 'safe', 'on' => 'search'),
-            array("pageSize", "safe")
+            array("pageSize,credit,first_name,last_name,invoice_email_address,user_email_address,user_status,invoice_type", "safe")
         );
     }
 
@@ -53,8 +64,10 @@ class UserMaster extends CActiveRecord {
     public function relations() {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
-        return array(
-        );
+     return array(
+                'user_balance' => array(self::HAS_ONE, 'UserBalanceDetails', array('user_id'=>'user_master_id')),
+                'user_details' => array(self::HAS_ONE, 'UserDetails', array('users_id'=>'user_master_id')),
+                );
     }
 
     /**
@@ -63,16 +76,24 @@ class UserMaster extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'user_master_id' => 'User Master',
-            'username' => 'Username',
-            'password' => 'Password',
-            'user_ip' => 'User Ip',
-            'account_type' => 'Account Type',
-            'user_type' => 'User Type',
-            'outbound_concurrent_call' => 'Outbound Concurrent Call',
-            'user_cps' => 'User Cps',
-            'user_package_id' => 'User Package',
+            'username' => 'USERNAME',
+            'password' => 'PASSWORD',
+            'user_ip' => 'USER IP',
+            'account_type' => 'ACCOUNT TYPE',
+            'user_type' => 'USER TYPE',
+            'outbound_concurrent_call' => 'OUTCALL LIMIT',
+            'user_cps' => 'CPS',
+            'user_package_id' => 'PACKAGE',
             'user_created_date' => 'User Created Date',
             'user_updated_date' => 'User Updated Date',
+            'credit' => 'CREDIT',
+            'first_name'=> 'FIRST NAME',
+	    'last_name'=> 'LAST NAME',
+	    'phone_number'=> 'PHONE NUMBER',
+	    'invoice_email_address'=> 'INVOICE EMAIL',
+	    'user_email_address'=> 'USER EMAIL',
+	    'invoice_type'=> 'INVOICE TYPE',
+	    'user_status'=> 'USER STATUS',
         );
     }
 
@@ -105,7 +126,9 @@ class UserMaster extends CActiveRecord {
         $criteria->compare('username', $this->user_master_id, true, "OR");
         $criteria->compare('user_ip', $this->user_master_id, true, "OR");
         $criteria->compare('account_type', $this->user_master_id, true, "OR");
-        $criteria->compare('user_type', $this->user_master_id, true, "OR");
+        $criteria->compare('user_type', $this->user_master_id, true);
+        $criteria->with = array('user_details');
+        $criteria->compare('user_status',"<>2",true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -131,4 +154,9 @@ class UserMaster extends CActiveRecord {
     public function getUserList(){
         return CHtml::ListData(UserMaster::model()->findAllByAttributes(array("user_type"=>"customer")), 'user_master_id', 'username');
     }
+    public function getPackageList()
+    {
+	    return CHtml::ListData(PackageMaster::model()->findAll(),'package_id','package_name');
+    }
+    
 }

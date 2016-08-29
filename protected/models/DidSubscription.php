@@ -77,13 +77,13 @@ class DidSubscription extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'did_subscription_id' => 'Did Subscription',
-            'user_id' => 'User',
-            'did_id' => 'Did',
-            'did_user_ip' => 'Did User Ip',
-            'subscription_type' => 'Subscription Type',
-            'subcription_status' => 'Status',
-            'max_inbound_call' => 'Max Inbound Call',
-            'provider_id' => 'Provider'
+            'user_id' => 'DID USER',
+            'did_id' => 'DID',
+            'did_user_ip' => 'DID IP',
+            'subscription_type' => 'SUBSCRIPTION TYPE',
+            'subcription_status' => 'STATUS',
+            'max_inbound_call' => 'CALL LIMIT',
+            'provider_id' => 'PROVIDER'
         );
     }
 

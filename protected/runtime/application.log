@@ -1,0 +1,609 @@
+2016/08/26 17:49:53 [error] [exception.CException] exception 'CException' with message 'Property "PackageMaster.pageSize" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pageSize')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('pageSize')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(1982): CHtml::resolveValue(Object(PackageMaster), 'pageSize')
+#3 /var/www/html/yii/framework/web/widgets/CActiveForm.php(914): CHtml::activeDropDownList(Object(PackageMaster), 'pageSize', Array, Array)
+#4 /var/www/html/R_Switch/protected/views/packageMaster/_search.php(23): CActiveForm->dropDownList(Object(PackageMaster), 'pageSize', Array)
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#7 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#8 /var/www/html/R_Switch/protected/views/packageMaster/admin.php(22): CController->renderPartial('_search', Array)
+#9 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#10 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(143): CController->render('admin', Array)
+#14 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PackageMasterController->actionAdmin()
+#15 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/a...')
+#25 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/admin
+---
+2016/08/26 17:49:55 [error] [exception.CException] exception 'CException' with message 'Property "PackageMaster.pageSize" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pageSize')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('pageSize')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(1982): CHtml::resolveValue(Object(PackageMaster), 'pageSize')
+#3 /var/www/html/yii/framework/web/widgets/CActiveForm.php(914): CHtml::activeDropDownList(Object(PackageMaster), 'pageSize', Array, Array)
+#4 /var/www/html/R_Switch/protected/views/packageMaster/_search.php(23): CActiveForm->dropDownList(Object(PackageMaster), 'pageSize', Array)
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#7 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#8 /var/www/html/R_Switch/protected/views/packageMaster/admin.php(22): CController->renderPartial('_search', Array)
+#9 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#10 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(143): CController->render('admin', Array)
+#14 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PackageMasterController->actionAdmin()
+#15 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/a...')
+#25 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/admin
+---
+2016/08/26 17:49:58 [error] [exception.CException] exception 'CException' with message 'Property "PackageMaster.pageSize" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pageSize')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('pageSize')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(1982): CHtml::resolveValue(Object(PackageMaster), 'pageSize')
+#3 /var/www/html/yii/framework/web/widgets/CActiveForm.php(914): CHtml::activeDropDownList(Object(PackageMaster), 'pageSize', Array, Array)
+#4 /var/www/html/R_Switch/protected/views/packageMaster/_search.php(23): CActiveForm->dropDownList(Object(PackageMaster), 'pageSize', Array)
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#7 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#8 /var/www/html/R_Switch/protected/views/packageMaster/admin.php(22): CController->renderPartial('_search', Array)
+#9 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#10 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(143): CController->render('admin', Array)
+#14 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PackageMasterController->actionAdmin()
+#15 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/a...')
+#25 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/admin
+---
+2016/08/26 17:51:03 [error] [exception.CException] exception 'CException' with message 'Property "PackageMaster.pageSize" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pageSize')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('pageSize')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(1982): CHtml::resolveValue(Object(PackageMaster), 'pageSize')
+#3 /var/www/html/yii/framework/web/widgets/CActiveForm.php(914): CHtml::activeDropDownList(Object(PackageMaster), 'pageSize', Array, Array)
+#4 /var/www/html/R_Switch/protected/views/packageMaster/_search.php(23): CActiveForm->dropDownList(Object(PackageMaster), 'pageSize', Array)
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#7 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#8 /var/www/html/R_Switch/protected/views/packageMaster/admin.php(22): CController->renderPartial('_search', Array)
+#9 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#10 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(143): CController->render('admin', Array)
+#14 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PackageMasterController->actionAdmin()
+#15 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/a...')
+#25 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/admin
+---
+2016/08/26 17:51:59 [error] [exception.CException] exception 'CException' with message 'Property "PackageMaster.pageSize" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pageSize')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('pageSize')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(1982): CHtml::resolveValue(Object(PackageMaster), 'pageSize')
+#3 /var/www/html/yii/framework/web/widgets/CActiveForm.php(914): CHtml::activeDropDownList(Object(PackageMaster), 'pageSize', Array, Array)
+#4 /var/www/html/R_Switch/protected/views/packageMaster/_search.php(23): CActiveForm->dropDownList(Object(PackageMaster), 'pageSize', Array)
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#7 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#8 /var/www/html/R_Switch/protected/views/packageMaster/admin.php(22): CController->renderPartial('_search', Array)
+#9 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#10 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(143): CController->render('admin', Array)
+#14 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PackageMasterController->actionAdmin()
+#15 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/a...')
+#25 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/admin
+---
+2016/08/26 17:52:34 [error] [exception.CException] exception 'CException' with message 'Property "PackageMaster.pageSize" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pageSize')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('pageSize')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(1982): CHtml::resolveValue(Object(PackageMaster), 'pageSize')
+#3 /var/www/html/yii/framework/web/widgets/CActiveForm.php(914): CHtml::activeDropDownList(Object(PackageMaster), 'pageSize', Array, Array)
+#4 /var/www/html/R_Switch/protected/views/packageMaster/_search.php(23): CActiveForm->dropDownList(Object(PackageMaster), 'pageSize', Array)
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#7 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#8 /var/www/html/R_Switch/protected/views/packageMaster/admin.php(22): CController->renderPartial('_search', Array)
+#9 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#10 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(143): CController->render('admin', Array)
+#14 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PackageMasterController->actionAdmin()
+#15 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/a...')
+#25 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/admin
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=site/login
+---
+2016/08/26 18:04:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/R_Switch/protected/controllers/PackageMasterController.php:157
+Stack trace:
+#0 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(113): PackageMasterController->loadModel('1')
+#1 [internal function]: PackageMasterController->actionDelete('1')
+#2 /var/www/html/yii/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(PackageMasterController), Array)
+#3 /var/www/html/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(PackageMasterController), Object(ReflectionMethod), Array)
+#4 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/yii/framework/web/CController.php(1116): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#16 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/d...')
+#17 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/delete&id=1
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=packageMaster/admin
+---
+2016/08/26 18:05:45 [error] [exception.CException] exception 'CException' with message 'PackageMasterController cannot find the requested view "/layouts/_message".' in /var/www/html/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/html/R_Switch/protected/views/packageMaster/admin.php(9): CController->renderPartial('/layouts/_messa...')
+#1 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#2 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#3 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#4 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#5 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(143): CController->render('admin', Array)
+#6 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PackageMasterController->actionAdmin()
+#7 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#16 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/a...')
+#17 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/admin
+---
+2016/08/26 18:24:48 [error] [exception.CException] exception 'CException' with message 'Property "PackageMaster.user_ip" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('user_ip')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('user_ip')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(2452): CHtml::resolveValue(Object(PackageMaster), 'user_ip')
+#3 /var/www/html/yii/framework/web/helpers/CHtml.php(1534): CHtml::activeInputField('text', Object(PackageMaster), 'user_ip', Array)
+#4 /var/www/html/yii/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(PackageMaster), 'user_ip', Array)
+#5 /var/www/html/R_Switch/protected/views/packageMaster/_form.php(20): CActiveForm->textField(Object(PackageMaster), 'user_ip')
+#6 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#7 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#8 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#9 /var/www/html/R_Switch/protected/views/packageMaster/create.php(20): CController->renderPartial('_form', Array)
+#10 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#11 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(79): CController->render('create', Array)
+#15 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PackageMasterController->actionCreate()
+#16 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/c...')
+#26 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#27 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/create
+---
+2016/08/26 18:25:53 [error] [exception.CException] exception 'CException' with message 'Property "PackageMaster.account_type" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('account_type')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('account_type')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(2452): CHtml::resolveValue(Object(PackageMaster), 'account_type')
+#3 /var/www/html/yii/framework/web/helpers/CHtml.php(1534): CHtml::activeInputField('text', Object(PackageMaster), 'account_type', Array)
+#4 /var/www/html/yii/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(PackageMaster), 'account_type', Array)
+#5 /var/www/html/R_Switch/protected/views/packageMaster/_form.php(34): CActiveForm->textField(Object(PackageMaster), 'account_type')
+#6 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#7 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#8 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#9 /var/www/html/R_Switch/protected/views/packageMaster/create.php(20): CController->renderPartial('_form', Array)
+#10 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#11 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(79): CController->render('create', Array)
+#15 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): PackageMasterController->actionCreate()
+#16 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/c...')
+#26 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#27 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/create
+---
+2016/08/26 19:44:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/html/yii/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=gii
+---
+2016/08/26 19:44:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/html/yii/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=gii
+---
+2016/08/26 19:56:08 [error] [exception.CException] exception 'CException' with message 'Property "UserMaster.user_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('user_id')
+#1 /var/www/html/yii/framework/db/ar/CActiveFinder.php(674): CActiveRecord->__get('user_id')
+#2 /var/www/html/yii/framework/db/ar/CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(UserMaster))
+#3 /var/www/html/yii/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(UserMaster))
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(UserMaster))
+#5 /var/www/html/yii/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('user_balance')
+#6 /var/www/html/yii/framework/base/CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('user_balance')
+#7 /var/www/html/yii/framework/base/CComponent.php(612): eval()
+#8 /var/www/html/yii/framework/zii/widgets/grid/CDataColumn.php(142): CComponent->evaluateExpression('$data->user_bal...', Array)
+#9 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(231): CDataColumn->getDataCellContent(0)
+#10 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(154): CGridColumn->renderDataCellContent(0, Object(UserMaster))
+#11 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(638): CGridColumn->renderDataCell(0)
+#12 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(622): CGridView->renderDataCell(Object(CDataColumn), 0)
+#13 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(578): CGridView->renderTableRow(0)
+#14 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(488): CGridView->renderTableBody()
+#15 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(181): CGridView->renderItems()
+#16 [internal function]: CBaseListView->renderSection(Array)
+#17 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{items}<div cla...')
+#18 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(149): CBaseListView->renderContent()
+#19 /var/www/html/yii/framework/web/CBaseController.php(181): CBaseListView->run()
+#20 /var/www/html/R_Switch/protected/views/userMaster/admin.php(64): CBaseController->widget('zii.widgets.gri...', Array)
+#21 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#22 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#23 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#24 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#25 /var/www/html/R_Switch/protected/controllers/UserMasterController.php(125): CController->render('admin', Array)
+#26 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): UserMasterController->actionAdmin()
+#27 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#28 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#29 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#30 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#31 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#32 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#33 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#34 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#35 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#36 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/admi...')
+#37 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#38 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#39 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/admin
+---
+2016/08/27 10:32:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin'".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('admin'')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin'')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/admi...')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/admin%27
+---
+2016/08/27 10:57:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('profile')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('profile')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/prof...')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/profile
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=userMaster/admin
+---
+2016/08/27 14:17:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('profile')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('profile')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/prof...')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/profile
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=userMaster/admin
+---
+2016/08/27 19:21:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/html/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('didbox/delete')
+#10 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#12 {main}
+REQUEST_URI=/R_Switch/index.php?r=didbox/delete&id=1
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=didbox
+---
+2016/08/27 19:21:55 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/html/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('didbox/delete')
+#10 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#12 {main}
+REQUEST_URI=/R_Switch/index.php?r=didbox/delete&id=1
+---
+2016/08/27 19:22:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/html/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('didbox/delete')
+#10 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#12 {main}
+REQUEST_URI=/R_Switch/index.php?r=didbox/delete&id=2
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=didbox
+---
+2016/08/28 06:52:23 [error] [exception.CException] exception 'CException' with message 'UserMasterController cannot find the requested view "_updateform".' in /var/www/html/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/html/R_Switch/protected/views/userMaster/update.php(25): CController->renderPartial('_updateform', Array)
+#1 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#2 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#3 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#4 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#5 /var/www/html/R_Switch/protected/controllers/UserMasterController.php(92): CController->render('update', Array)
+#6 [internal function]: UserMasterController->actionUpdate('1')
+#7 /var/www/html/yii/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(UserMasterController), Array)
+#8 /var/www/html/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserMasterController), Object(ReflectionMethod), Array)
+#9 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#18 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/upda...')
+#19 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#21 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/update&id=1
+---
+2016/08/28 19:10:12 [error] [exception.CException] exception 'CException' with message 'Property "UserMasterController.user_master_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/R_Switch/protected/controllers/UserMasterController.php(151): CComponent->__get('user_master_id')
+#1 [internal function]: UserMasterController->actionDelete('24')
+#2 /var/www/html/yii/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(UserMasterController), Array)
+#3 /var/www/html/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserMasterController), Object(ReflectionMethod), Array)
+#4 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/yii/framework/web/CController.php(1116): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#16 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/dele...')
+#17 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#19 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/delete&id=24
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=userMaster/admin
+---
+2016/08/28 19:16:43 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_status' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `user_master` `t` WHERE user_status NOT LIKE :ycp0.
+in /var/www/html/R_Switch/protected/views/userMaster/admin.php (69)
+in /var/www/html/R_Switch/protected/controllers/UserMasterController.php (176)
+in /var/www/html/R_Switch/index.php (16)
+2016/08/28 19:16:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_status' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `user_master` `t` WHERE user_status NOT LIKE :ycp0' in /var/www/html/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /var/www/html/yii/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/html/yii/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /var/www/html/yii/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /var/www/html/yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(125): CDataProvider->getData()
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(339): CBaseListView->init()
+#8 /var/www/html/yii/framework/web/CBaseController.php(147): CGridView->init()
+#9 /var/www/html/yii/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 /var/www/html/R_Switch/protected/views/userMaster/admin.php(69): CBaseController->widget('zii.widgets.gri...', Array)
+#11 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#12 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#14 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#15 /var/www/html/R_Switch/protected/controllers/UserMasterController.php(176): CController->render('admin', Array)
+#16 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): UserMasterController->actionAdmin()
+#17 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#26 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/admi...')
+#27 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#28 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#29 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/admin
+---
+2016/08/28 19:20:40 [error] [exception.CException] exception 'CException' with message 'Property "UserMasterController.user_master_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/R_Switch/protected/controllers/UserMasterController.php(151): CComponent->__get('user_master_id')
+#1 [internal function]: UserMasterController->actionDelete('14')
+#2 /var/www/html/yii/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(UserMasterController), Array)
+#3 /var/www/html/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserMasterController), Object(ReflectionMethod), Array)
+#4 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/yii/framework/web/CController.php(1116): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#16 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/dele...')
+#17 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#19 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/delete&id=14
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=userMaster/admin
+---
+2016/08/28 19:29:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('profile')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('profile')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/prof...')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/profile
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=dashboard
+---
+2016/08/28 19:35:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('profile')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('profile')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/prof...')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/profile
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=didbox
+---
+2016/08/28 19:40:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('profile')
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('userMaster/prof...')
+#9 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#11 {main}
+REQUEST_URI=/R_Switch/index.php?r=userMaster/profile
+---
