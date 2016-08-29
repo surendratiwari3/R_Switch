@@ -50,7 +50,7 @@ class DidMaster extends CActiveRecord {
         // will receive user inputs.
         return array(
             array('file', 'file', 'allowEmpty' => false, 'types' => 'csv', 'on' => 'import'),
-            array('did_number, provider_id, status, provider_monthly_cost, provider_per_minute_cost, customer_monthly_cost, customer_per_minute_cost', 'required','on'=>'crud'),
+            array('did_number, provider_id, status, provider_monthly_cost, provider_per_minute_cost, customer_monthly_cost, customer_per_minute_cost', 'required', 'on' => 'crud'),
             array('provider_id', 'numerical', 'integerOnly' => true),
             array('provider_monthly_cost, provider_per_minute_cost, customer_monthly_cost, customer_per_minute_cost', 'numerical'),
             array('did_number', 'length', 'max' => 30),
@@ -117,13 +117,10 @@ class DidMaster extends CActiveRecord {
 
         $criteria = new CDbCriteria;
 
-        $criteria->compare('did_number', $this->did_id, true, "OR");
-        $criteria->compare('providerRel.username', $this->did_id, true, "OR");
-        $criteria->compare('did_availability', $this->did_id, true, "OR");
-        $criteria->compare('provider_monthly_cost', $this->did_id, true, "OR");
-        $criteria->compare('provider_per_minute_cost', $this->did_id, true, "OR");
-        $criteria->compare('customer_monthly_cost', $this->did_id, true, "OR");
-        $criteria->compare('customer_per_minute_cost', $this->did_id, true, "OR");
+        $criteria->compare('did_number', $this->did_number, true);
+        $criteria->compare('provider_id', $this->provider_id);
+        $criteria->compare('did_availability', $this->did_availability);
+        $criteria->compare('status', $this->status);
         $criteria->with = array("providerRel");
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

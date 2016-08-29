@@ -7,6 +7,7 @@
     <li><a href="javascript:;">DID Box</a></li>
 </ul>
 <?php $this->renderPartial("/layouts/_message"); ?>
+<?php $this->renderPartial("_search", array("model" => $model)); ?>
 <div class="row-fluid sortable ui-sortable">		
     <div class="box span12">
         <div data-original-title="" class="box-header">
@@ -18,8 +19,29 @@
             </div>
         </div>
         <div class="box-content">
-            <div role="grid" class="dataTables_wrapper" id="DataTables_Table_0_wrapper">                
-                <?php $this->renderPartial("_search", array("model" => $model)); ?>
+            <div class="span10">
+                <label>Action :</label> 
+                <?php echo CHtml::dropDownList("DidMaster[status]", $model->status, $model->statusArr, array("prompt" => common::translateText("DROPDOWN_TEXT"), "class" => "multipleDelete", "data-href" => Yii::app()->createUrl(Yii::app()->controller->id . "/delete", array("status" => "SETSTATUS")))); ?>
+            </div>
+            <div class="span2 pull-right">
+                <label>&nbsp;</label>
+                <a class="btn btn-primary" title="Create Didbox" href="<?php echo Yii::app()->createUrl(Yii::app()->controller->id . "/create"); ?>">
+                    <i class="icon-plus-sign"></i>
+                </a>            
+                <?php
+                echo CHtml::Link('<i class="icon-download"></i>', array("didbox/import"), array(
+                    "title" => "Import",
+                    "class" => "btn btn-success importRecord"
+                ));
+                ?>
+                <?php
+                echo CHtml::Link('<i class="icon-file"></i>', "did_master.csv", array(
+                    "title" => "Sample File",
+                    "class" => "btn btn-blue"
+                ));
+                ?>
+            </div>
+            <div role="grid" class="dataTables_wrapper" id="DataTables_Table_0_wrapper">
                 <?php
                 $updateRight = true;
                 $deleteRight = true;
