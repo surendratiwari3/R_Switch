@@ -822,3 +822,605 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/R_Switch/index.php?r=gii
 ---
+2016/08/31 02:36:58 [error] [exception.CException] exception 'CException' with message 'Property "Rategroup.pageSize" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pageSize')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('pageSize')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(1982): CHtml::resolveValue(Object(Rategroup), 'pageSize')
+#3 /var/www/html/yii/framework/web/widgets/CActiveForm.php(914): CHtml::activeDropDownList(Object(Rategroup), 'pageSize', Array, Array)
+#4 /var/www/html/R_Switch/protected/views/rategroup/_search.php(23): CActiveForm->dropDownList(Object(Rategroup), 'pageSize', Array)
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#7 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#8 /var/www/html/R_Switch/protected/views/rategroup/admin.php(22): CController->renderPartial('_search', Array)
+#9 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#10 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /var/www/html/R_Switch/protected/controllers/RategroupController.php(143): CController->render('admin', Array)
+#14 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): RategroupController->actionAdmin()
+#15 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('rategroup/admin')
+#25 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#27 {main}
+REQUEST_URI=/R_Switch/index.php?r=rategroup/admin
+---
+2016/08/31 02:39:06 [error] [exception.CException] exception 'CException' with message 'Property "Rategroup.pageSize" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pageSize')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('pageSize')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(1982): CHtml::resolveValue(Object(Rategroup), 'pageSize')
+#3 /var/www/html/yii/framework/web/widgets/CActiveForm.php(914): CHtml::activeDropDownList(Object(Rategroup), 'pageSize', Array, Array)
+#4 /var/www/html/R_Switch/protected/views/rategroup/_search.php(23): CActiveForm->dropDownList(Object(Rategroup), 'pageSize', Array)
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#7 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#8 /var/www/html/R_Switch/protected/views/rategroup/admin.php(22): CController->renderPartial('_search', Array)
+#9 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#10 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /var/www/html/R_Switch/protected/controllers/RategroupController.php(143): CController->render('admin', Array)
+#14 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): RategroupController->actionAdmin()
+#15 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('rategroup/admin')
+#25 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#27 {main}
+REQUEST_URI=/R_Switch/index.php?r=rategroup/admin
+---
+2016/08/31 02:39:09 [error] [exception.CException] exception 'CException' with message 'Property "Rategroup.pageSize" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pageSize')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('pageSize')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(1982): CHtml::resolveValue(Object(Rategroup), 'pageSize')
+#3 /var/www/html/yii/framework/web/widgets/CActiveForm.php(914): CHtml::activeDropDownList(Object(Rategroup), 'pageSize', Array, Array)
+#4 /var/www/html/R_Switch/protected/views/rategroup/_search.php(23): CActiveForm->dropDownList(Object(Rategroup), 'pageSize', Array)
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#7 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#8 /var/www/html/R_Switch/protected/views/rategroup/admin.php(22): CController->renderPartial('_search', Array)
+#9 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#10 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /var/www/html/R_Switch/protected/controllers/RategroupController.php(143): CController->render('admin', Array)
+#14 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): RategroupController->actionAdmin()
+#15 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('rategroup/admin')
+#25 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#27 {main}
+REQUEST_URI=/R_Switch/index.php?r=rategroup/admin
+---
+2016/09/01 01:35:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/html/yii/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(CrudGenerator), Object(CInlineAction))
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/crud/index')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=gii/crud/index
+---
+2016/09/01 02:05:22 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/html/yii/framework/web/CController.php:336
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#9 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('rategroupToRate...')
+#10 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#11 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#12 {main}
+REQUEST_URI=/R_Switch/index.php?r=rategroupToRatecardMap/update
+---
+2016/09/01 02:13:57 [error] [exception.CException] exception 'CException' with message 'Property "RategroupToRatecardMap.package_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('package_id')
+#1 /var/www/html/yii/framework/base/CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('package_id')
+#2 /var/www/html/yii/framework/base/CComponent.php(612): eval()
+#3 /var/www/html/yii/framework/zii/widgets/grid/CButtonColumn.php(342): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 /var/www/html/yii/framework/zii/widgets/grid/CButtonColumn.php(321): CButtonColumn->renderButton('updateRecord', Array, 0, Object(RategroupToRatecardMap))
+#5 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(231): CButtonColumn->getDataCellContent(0)
+#6 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(154): CGridColumn->renderDataCellContent(0, Object(RategroupToRatecardMap))
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(638): CGridColumn->renderDataCell(0)
+#8 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(622): CGridView->renderDataCell(Object(CButtonColumn), 0)
+#9 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(578): CGridView->renderTableRow(0)
+#10 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(488): CGridView->renderTableBody()
+#11 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(181): CGridView->renderItems()
+#12 [internal function]: CBaseListView->renderSection(Array)
+#13 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{items}<div cla...')
+#14 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(149): CBaseListView->renderContent()
+#15 /var/www/html/yii/framework/web/CBaseController.php(181): CBaseListView->run()
+#16 /var/www/html/R_Switch/protected/views/rategroupToRatecardMap/admin.php(61): CBaseController->widget('zii.widgets.gri...', Array)
+#17 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#18 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#19 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#20 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#21 /var/www/html/R_Switch/protected/controllers/RategroupToRatecardMapController.php(143): CController->render('admin', Array)
+#22 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): RategroupToRatecardMapController->actionAdmin()
+#23 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#24 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#26 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#30 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#32 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('rategroupToRate...')
+#33 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#34 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#35 {main}
+REQUEST_URI=/R_Switch/index.php?r=rategroupToRatecardMap/admin
+---
+2016/09/01 02:20:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/R_Switch/protected/controllers/PackageMasterController.php:157
+Stack trace:
+#0 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(89): PackageMasterController->loadModel('1')
+#1 [internal function]: PackageMasterController->actionUpdate('1')
+#2 /var/www/html/yii/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(PackageMasterController), Array)
+#3 /var/www/html/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(PackageMasterController), Object(ReflectionMethod), Array)
+#4 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#13 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/u...')
+#14 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/update&id=1
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=rategroupToRatecardMap/admin
+---
+2016/09/01 02:21:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/R_Switch/protected/controllers/PackageMasterController.php:157
+Stack trace:
+#0 /var/www/html/R_Switch/protected/controllers/PackageMasterController.php(89): PackageMasterController->loadModel('1')
+#1 [internal function]: PackageMasterController->actionUpdate('1')
+#2 /var/www/html/yii/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(PackageMasterController), Array)
+#3 /var/www/html/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(PackageMasterController), Object(ReflectionMethod), Array)
+#4 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#13 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('packageMaster/u...')
+#14 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#16 {main}
+REQUEST_URI=/R_Switch/index.php?r=packageMaster/update&id=1
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=rategroupToRatecardMap/admin
+---
+2016/09/03 03:29:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/html/yii/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=gii
+---
+2016/09/03 04:41:52 [error] [exception.CException] exception 'CException' with message 'Property "BuyCallRates.rategroup_to_ratecard_map_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('rategroup_to_ra...')
+#1 /var/www/html/yii/framework/base/CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('rategroup_to_ra...')
+#2 /var/www/html/yii/framework/base/CComponent.php(612): eval()
+#3 /var/www/html/yii/framework/zii/widgets/grid/CButtonColumn.php(342): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 /var/www/html/yii/framework/zii/widgets/grid/CButtonColumn.php(321): CButtonColumn->renderButton('updateRecord', Array, 0, Object(BuyCallRates))
+#5 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(231): CButtonColumn->getDataCellContent(0)
+#6 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(154): CGridColumn->renderDataCellContent(0, Object(BuyCallRates))
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(638): CGridColumn->renderDataCell(0)
+#8 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(622): CGridView->renderDataCell(Object(CButtonColumn), 0)
+#9 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(578): CGridView->renderTableRow(0)
+#10 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(488): CGridView->renderTableBody()
+#11 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(181): CGridView->renderItems()
+#12 [internal function]: CBaseListView->renderSection(Array)
+#13 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{items}<div cla...')
+#14 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(149): CBaseListView->renderContent()
+#15 /var/www/html/yii/framework/web/CBaseController.php(181): CBaseListView->run()
+#16 /var/www/html/R_Switch/protected/views/buyCallRates/admin.php(74): CBaseController->widget('zii.widgets.gri...', Array)
+#17 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#18 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#19 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#20 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#21 /var/www/html/R_Switch/protected/controllers/BuyCallRatesController.php(143): CController->render('admin', Array)
+#22 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): BuyCallRatesController->actionAdmin()
+#23 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#24 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#26 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#30 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#32 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buyCallRates/ad...')
+#33 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#34 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#35 {main}
+REQUEST_URI=/R_Switch/index.php?r=buyCallRates/admin
+---
+2016/09/03 18:08:22 [error] [exception.CException] exception 'CException' with message 'Property "SellCallRates.pageSize" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pageSize')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('pageSize')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(1982): CHtml::resolveValue(Object(SellCallRates), 'pageSize')
+#3 /var/www/html/yii/framework/web/widgets/CActiveForm.php(914): CHtml::activeDropDownList(Object(SellCallRates), 'pageSize', Array, Array)
+#4 /var/www/html/R_Switch/protected/views/sellCallRates/_search.php(26): CActiveForm->dropDownList(Object(SellCallRates), 'pageSize', Array, Array)
+#5 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#7 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#8 /var/www/html/R_Switch/protected/views/sellCallRates/admin.php(11): CController->renderPartial('_search', Array)
+#9 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#10 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /var/www/html/R_Switch/protected/controllers/SellCallRatesController.php(143): CController->render('admin', Array)
+#14 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SellCallRatesController->actionAdmin()
+#15 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sellCallRates/a...')
+#25 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#27 {main}
+REQUEST_URI=/R_Switch/index.php?r=sellCallRates/admin
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=packageMaster/admin
+---
+2016/09/03 18:09:58 [error] [exception.CException] exception 'CException' with message 'Property "SellCallRates.buy_call_rates_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('buy_call_rates_...')
+#1 /var/www/html/yii/framework/base/CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('buy_call_rates_...')
+#2 /var/www/html/yii/framework/base/CComponent.php(612): eval()
+#3 /var/www/html/yii/framework/zii/widgets/grid/CButtonColumn.php(342): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 /var/www/html/yii/framework/zii/widgets/grid/CButtonColumn.php(321): CButtonColumn->renderButton('updateRecord', Array, 0, Object(SellCallRates))
+#5 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(231): CButtonColumn->getDataCellContent(0)
+#6 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(154): CGridColumn->renderDataCellContent(0, Object(SellCallRates))
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(638): CGridColumn->renderDataCell(0)
+#8 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(622): CGridView->renderDataCell(Object(CButtonColumn), 0)
+#9 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(578): CGridView->renderTableRow(0)
+#10 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(488): CGridView->renderTableBody()
+#11 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(181): CGridView->renderItems()
+#12 [internal function]: CBaseListView->renderSection(Array)
+#13 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{items}<div cla...')
+#14 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(149): CBaseListView->renderContent()
+#15 /var/www/html/yii/framework/web/CBaseController.php(181): CBaseListView->run()
+#16 /var/www/html/R_Switch/protected/views/sellCallRates/admin.php(73): CBaseController->widget('zii.widgets.gri...', Array)
+#17 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#18 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#19 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#20 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#21 /var/www/html/R_Switch/protected/controllers/SellCallRatesController.php(143): CController->render('admin', Array)
+#22 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SellCallRatesController->actionAdmin()
+#23 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#24 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#26 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#30 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#32 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sellCallRates/a...')
+#33 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#34 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#35 {main}
+REQUEST_URI=/R_Switch/index.php?r=sellCallRates/admin
+---
+2016/09/03 18:10:41 [error] [exception.CException] exception 'CException' with message 'Property "SellCallRates.sellCallRates" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('sellCallRates')
+#1 /var/www/html/yii/framework/base/CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('sellCallRates')
+#2 /var/www/html/yii/framework/base/CComponent.php(612): eval()
+#3 /var/www/html/yii/framework/zii/widgets/grid/CButtonColumn.php(342): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 /var/www/html/yii/framework/zii/widgets/grid/CButtonColumn.php(321): CButtonColumn->renderButton('updateRecord', Array, 0, Object(SellCallRates))
+#5 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(231): CButtonColumn->getDataCellContent(0)
+#6 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(154): CGridColumn->renderDataCellContent(0, Object(SellCallRates))
+#7 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(638): CGridColumn->renderDataCell(0)
+#8 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(622): CGridView->renderDataCell(Object(CButtonColumn), 0)
+#9 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(578): CGridView->renderTableRow(0)
+#10 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(488): CGridView->renderTableBody()
+#11 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(181): CGridView->renderItems()
+#12 [internal function]: CBaseListView->renderSection(Array)
+#13 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{items}<div cla...')
+#14 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(149): CBaseListView->renderContent()
+#15 /var/www/html/yii/framework/web/CBaseController.php(181): CBaseListView->run()
+#16 /var/www/html/R_Switch/protected/views/sellCallRates/admin.php(73): CBaseController->widget('zii.widgets.gri...', Array)
+#17 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#18 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#19 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#20 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#21 /var/www/html/R_Switch/protected/controllers/SellCallRatesController.php(143): CController->render('admin', Array)
+#22 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SellCallRatesController->actionAdmin()
+#23 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#24 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#26 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#30 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#32 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sellCallRates/a...')
+#33 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#34 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#35 {main}
+REQUEST_URI=/R_Switch/index.php?r=sellCallRates/admin
+---
+2016/09/03 18:14:10 [error] [exception.CException] exception 'CException' with message 'Property "SellCallRates.per_second_charge" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('per_second_char...')
+#1 /var/www/html/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('per_second_char...')
+#2 /var/www/html/yii/framework/web/helpers/CHtml.php(2452): CHtml::resolveValue(Object(SellCallRates), 'per_second_char...')
+#3 /var/www/html/yii/framework/web/helpers/CHtml.php(1534): CHtml::activeInputField('text', Object(SellCallRates), 'per_second_char...', Array)
+#4 /var/www/html/yii/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(SellCallRates), 'per_second_char...', Array)
+#5 /var/www/html/R_Switch/protected/views/sellCallRates/_form.php(59): CActiveForm->textField(Object(SellCallRates), 'per_second_char...')
+#6 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#7 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#8 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#9 /var/www/html/R_Switch/protected/views/sellCallRates/create.php(25): CController->renderPartial('_form', Array)
+#10 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#11 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#12 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#13 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/html/R_Switch/protected/controllers/SellCallRatesController.php(79): CController->render('create', Array)
+#15 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): SellCallRatesController->actionCreate()
+#16 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('sellCallRates/c...')
+#26 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#27 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#28 {main}
+REQUEST_URI=/R_Switch/index.php?r=sellCallRates/create
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=sellCallRates/admin
+---
+2016/09/04 05:58:52 [error] [exception.CException] exception 'CException' with message 'Property "BuyCallRates.ratecard_id" is not defined.' in /var/www/html/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('ratecard_id')
+#1 /var/www/html/yii/framework/db/ar/CActiveFinder.php(661): CActiveRecord->__get('ratecard_id')
+#2 /var/www/html/yii/framework/db/ar/CActiveFinder.php(502): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(BuyCallRates))
+#3 /var/www/html/yii/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(BuyCallRates))
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(BuyCallRates))
+#5 /var/www/html/yii/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('ratecardRelatio...')
+#6 /var/www/html/yii/framework/base/CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('ratecardRelatio...')
+#7 /var/www/html/yii/framework/base/CComponent.php(612): eval()
+#8 /var/www/html/yii/framework/zii/widgets/grid/CDataColumn.php(142): CComponent->evaluateExpression('$data->ratecard...', Array)
+#9 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(231): CDataColumn->getDataCellContent(0)
+#10 /var/www/html/yii/framework/zii/widgets/grid/CGridColumn.php(154): CGridColumn->renderDataCellContent(0, Object(BuyCallRates))
+#11 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(638): CGridColumn->renderDataCell(0)
+#12 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(622): CGridView->renderDataCell(Object(CDataColumn), 0)
+#13 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(578): CGridView->renderTableRow(0)
+#14 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(488): CGridView->renderTableBody()
+#15 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(181): CGridView->renderItems()
+#16 [internal function]: CBaseListView->renderSection(Array)
+#17 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{items}<div cla...')
+#18 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(149): CBaseListView->renderContent()
+#19 /var/www/html/yii/framework/web/CBaseController.php(181): CBaseListView->run()
+#20 /var/www/html/R_Switch/protected/views/buyCallRates/admin.php(73): CBaseController->widget('zii.widgets.gri...', Array)
+#21 /var/www/html/yii/framework/web/CBaseController.php(126): require('/var/www/html/R...')
+#22 /var/www/html/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/R...', Array, true)
+#23 /var/www/html/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/R...', Array, true)
+#24 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#25 /var/www/html/R_Switch/protected/controllers/BuyCallRatesController.php(143): CController->render('admin', Array)
+#26 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): BuyCallRatesController->actionAdmin()
+#27 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#28 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#29 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#30 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#31 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#32 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#33 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#34 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#35 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#36 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buyCallRates/ad...')
+#37 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#38 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#39 {main}
+REQUEST_URI=/R_Switch/index.php?r=buyCallRates/admin
+---
+2016/09/04 10:55:14 [error] [exception.CException] exception 'CException' with message 'BuyCallRatesController cannot find the requested view "admin".' in /var/www/html/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#1 /var/www/html/R_Switch/protected/controllers/BuyCallRatesController.php(143): CController->render('admin', Array)
+#2 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): BuyCallRatesController->actionAdmin()
+#3 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#12 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buyCallRates/ad...')
+#13 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#14 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/R_Switch/index.php?r=buyCallRates/admin
+---
+2016/09/04 10:56:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Invalid request. Please do not repeat this request again.' in /var/www/html/R_Switch/protected/controllers/DidboxController.php:213
+Stack trace:
+#0 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): DidboxController->actionImport()
+#1 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('import')
+#10 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('didbox/import')
+#11 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#12 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#13 {main}
+REQUEST_URI=/R_Switch/index.php?r=didbox/import
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=buyCallRates/admin
+---
+2016/09/04 11:11:33 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Invalid request. Please do not repeat this request again.' in /var/www/html/R_Switch/protected/controllers/DidboxController.php:213
+Stack trace:
+#0 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): DidboxController->actionImport()
+#1 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('import')
+#10 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('didbox/import')
+#11 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#12 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#13 {main}
+REQUEST_URI=/R_Switch/index.php?r=didbox/import
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=buyCallRates/admin
+---
+2016/09/04 11:11:38 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Invalid request. Please do not repeat this request again.' in /var/www/html/R_Switch/protected/controllers/DidboxController.php:213
+Stack trace:
+#0 /var/www/html/yii/framework/web/actions/CInlineAction.php(49): DidboxController->actionImport()
+#1 /var/www/html/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /var/www/html/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 /var/www/html/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('import')
+#10 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('didbox/import')
+#11 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#12 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#13 {main}
+REQUEST_URI=/R_Switch/index.php?r=didbox/import
+---
+2016/09/04 11:17:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "import".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('import')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('import')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buyCallRates/im...')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=buyCallRates/import
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=buyCallRates/admin
+---
+2016/09/04 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "import".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('import')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('import')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buyCallRates/im...')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=buyCallRates/import
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=buyCallRates/admin
+---
+2016/09/04 11:18:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "import".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('import')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('import')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buyCallRates/im...')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=buyCallRates/import
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=buyCallRates/admin
+---
+2016/09/04 11:19:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "import".' in /var/www/html/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(270): CController->missingAction('import')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('import')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buyCallRates/im...')
+#3 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/R_Switch/index.php?r=buyCallRates/import
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=buyCallRates/admin
+---
+2016/09/04 11:25:30 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('import')
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buyCallRates/im...')
+#9 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#11 {main}
+REQUEST_URI=/R_Switch/index.php?r=buyCallRates/import
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=buyCallRates/admin
+---
+2016/09/04 11:26:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/html/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/html/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/yii/framework/web/CWebApplication.php(282): CController->run('import')
+#8 /var/www/html/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buyCallRates/im...')
+#9 /var/www/html/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/R_Switch/index.php(16): CApplication->run()
+#11 {main}
+REQUEST_URI=/R_Switch/index.php?r=buyCallRates/import
+HTTP_REFERER=http://104.251.215.140/R_Switch/index.php?r=buyCallRates/admin
+---

@@ -34,13 +34,14 @@
                     "class" => "btn btn-success importRecord"
                 ));
                 ?>
-                <?php
+               <?php
                 echo CHtml::Link('<i class="icon-file"></i>', "did_master.csv", array(
                     "title" => "Sample File",
                     "class" => "btn btn-blue"
                 ));
                 ?>
             </div>
+            
             <div role="grid" class="dataTables_wrapper" id="DataTables_Table_0_wrapper">
                 <?php
                 $updateRight = true;
@@ -133,7 +134,6 @@
                             $('#modalContainer .modal').modal();                                          
                             return false;
                         });
-                        $('.importRecord').hide();
                         $.post('" . Yii::app()->createUrl("didbox/import") . "',function(html){
                             $('#modalContainer').html(html);
                             $('.importRecord').show();

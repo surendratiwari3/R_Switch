@@ -12,6 +12,7 @@
  */
 class Rategroup extends CActiveRecord
 {
+	public $pageSize = 10;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -35,6 +36,7 @@ class Rategroup extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('rate_group_id, rate_group_name, rate_group_description, rategroup_status, rate_group_type', 'safe', 'on'=>'search'),
+			array("pageSize", "safe")
 		);
 	}
 
