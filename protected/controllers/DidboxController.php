@@ -197,6 +197,7 @@ class DidboxController extends Controller {
                         foreach ($records as $record) {
                             $model = new DidMaster();
                             $model->attributes = $record;
+                            $model->status = DidMaster::ACTIVE;
                             $model->save(false);
                         }
                         Yii::app()->user->setFlash("success", "Records imported successfuly.");
